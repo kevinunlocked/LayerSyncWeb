@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import React from "react"
 
 const navigation = [
   { name: "Home", href: "#home" },
@@ -12,33 +13,68 @@ const navigation = [
   { name: "Resources", href: "#resources" },
 ]
 
+const MemoizedNavigation = React.memo(({ navigation, activeSection, scrollToSection }) => (
+  <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
+    {navigation.map((item) => (
+      <button
+        key={item.name}
+        onClick={() => scrollToSection(item.href)}
+        className={`relative text-gray-700 hover:text-blue-600 font-medium transition-all duration-300 group px-3 py-2 rounded-xl hover:bg-blue-50 ${
+          activeSection === item.href.substring(1) ? "text-blue-600 bg-blue-50" : ""
+        }`}
+      >
+        {item.name}
+        <span
+          className={`absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300 group-hover:w-full ${
+            activeSection === item.href.substring(1) ? "w-full" : ""
+          }`}
+        />
+      </button>
+    ))}
+  </nav>
+))
+
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState("home")
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10)
-    }
+    let ticking = false
 
-    const handleSectionChange = () => {
-      const sections = navigation.map((item) => item.href.substring(1))
-      const currentSection = sections.find((section) => {
-        const element = document.getElementById(section)
-        if (element) {
-          const rect = element.getBoundingClientRect()
-          return rect.top <= 100 && rect.bottom >= 100
-        }
-        return false
-      })
-      if (currentSection) {
-        setActiveSection(currentSection)
+    const handleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 10)
+          ticking = false
+        })
+        ticking = true
       }
     }
 
-    window.addEventListener("scroll", handleScroll)
-    window.addEventListener("scroll", handleSectionChange)
+    const handleSectionChange = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const sections = navigation.map((item) => item.href.substring(1))
+          const currentSection = sections.find((section) => {
+            const element = document.getElementById(section)
+            if (element) {
+              const rect = element.getBoundingClientRect()
+              return rect.top <= 100 && rect.bottom >= 100
+            }
+            return false
+          })
+          if (currentSection) {
+            setActiveSection(currentSection)
+          }
+          ticking = false
+        })
+        ticking = true
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    window.addEventListener("scroll", handleSectionChange, { passive: true })
 
     return () => {
       window.removeEventListener("scroll", handleScroll)
@@ -78,24 +114,7 @@ export default function Header() {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
-            {navigation.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => scrollToSection(item.href)}
-                className={`relative text-gray-700 hover:text-blue-600 font-medium transition-all duration-300 group px-3 py-2 rounded-xl hover:bg-blue-50 ${
-                  activeSection === item.href.substring(1) ? "text-blue-600 bg-blue-50" : ""
-                }`}
-              >
-                {item.name}
-                <span
-                  className={`absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300 group-hover:w-full ${
-                    activeSection === item.href.substring(1) ? "w-full" : ""
-                  }`}
-                />
-              </button>
-            ))}
-          </nav>
+          <MemoizedNavigation navigation={navigation} activeSection={activeSection} scrollToSection={scrollToSection} />
 
           {/* Get Started Button - Enhanced for mobile */}
           <div className="hidden sm:block">

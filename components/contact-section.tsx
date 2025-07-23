@@ -144,7 +144,7 @@ export default function ContactSection() {
         const phoneRegex = /^[+]?[1-9][\d]{0,15}$/
         if (!value.trim()) {
           newErrors.phone = "Phone number is required"
-        } else if (!phoneRegex.test(value.replace(/[\s\-$$$$]/g, ""))) {
+        } else if (!phoneRegex.test(value.replace(/[\s\-()]/g, ""))) {
           newErrors.phone = "Please enter a valid phone number"
         } else {
           delete newErrors.phone
@@ -217,14 +217,14 @@ export default function ContactSection() {
       <div className="container-responsive relative z-10">
         {/* Section Header - Mobile optimized */}
         <div className="text-center mb-12 sm:mb-16">
-          <div className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white/90 text-xs sm:text-sm font-medium mb-4 sm:mb-6">
-            <Sparkles className="w-3 sm:w-4 h-3 sm:h-4 mr-2 text-blue-300" />
-            Get Your Free AI Audit
+          <div className="inline-flex items-center px-3 sm:px-4 lg:px-6 py-1.5 sm:py-2 lg:py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white/90 text-xs sm:text-sm font-medium mb-4 sm:mb-6">
+            <Sparkles className="w-3 sm:w-4 h-3 sm:h-4 mr-1.5 sm:mr-2 text-blue-300" />
+            Get Your Free AI Strategy Session
           </div>
-          <h2 className="text-responsive-2xl sm:text-responsive-3xl lg:text-responsive-4xl font-bold text-white mb-4 sm:mb-6 leading-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight">
             Ready to Transform Your Business?
           </h2>
-          <p className="text-responsive-sm sm:text-responsive-base text-blue-100/90 max-w-4xl mx-auto leading-relaxed font-light">
+          <p className="text-base sm:text-lg lg:text-xl text-blue-100/90 max-w-4xl mx-auto leading-relaxed font-light">
             Discover automation opportunities in 2-3 minutes and get your personalized AI strategy roadmap.
           </p>
         </div>
@@ -235,7 +235,7 @@ export default function ContactSection() {
           <Card className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl sm:rounded-3xl shadow-2xl">
             <CardHeader className="px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8">
               <CardTitle className="text-xl sm:text-2xl lg:text-3xl font-bold text-white text-center mb-3 sm:mb-4">
-                Get Your Free AI Audit
+                Get Your Free AI Strategy Session
               </CardTitle>
               <p className="text-white/80 text-center text-sm sm:text-base lg:text-lg leading-relaxed">
                 Discover automation opportunities in 2-3 minutes
@@ -423,11 +423,11 @@ export default function ContactSection() {
                   {isSubmitting ? (
                     <>
                       <div className="animate-spin rounded-full h-4 sm:h-5 w-4 sm:w-5 border-b-2 border-white mr-2 sm:mr-3"></div>
-                      Starting Your Free AI Audit...
+                      Starting Your Free AI Strategy Session...
                     </>
                   ) : (
                     <>
-                      Start Free AI Audit
+                      Get Your Free AI Strategy Session
                       <ArrowRight className="w-4 sm:w-5 h-4 sm:h-5 ml-2" />
                     </>
                   )}
