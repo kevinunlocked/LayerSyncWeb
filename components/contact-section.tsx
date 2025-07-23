@@ -18,10 +18,10 @@ import {
   Clock,
   Star,
   Users,
-  Zap,
   ArrowRight,
   Lock,
   Award,
+  Sparkles,
 } from "lucide-react"
 
 const revenueRanges = [
@@ -50,7 +50,7 @@ const contactMethods = [
     description: "Speak with an AI specialist",
     action: "+263 78 377 1054",
     link: "tel:+263783771054",
-    color: "from-green-500 to-green-600",
+    color: "from-green-500 to-emerald-500",
   },
   {
     icon: Mail,
@@ -58,7 +58,7 @@ const contactMethods = [
     description: "Get a response within 2 hours",
     action: "hello@layersyncai.com",
     link: "mailto:hello@layersyncai.com",
-    color: "from-blue-500 to-blue-600",
+    color: "from-blue-500 to-cyan-500",
   },
   {
     icon: Calendar,
@@ -66,7 +66,7 @@ const contactMethods = [
     description: "Schedule at your convenience",
     action: "View Available Times",
     link: "#calendar",
-    color: "from-purple-500 to-purple-600",
+    color: "from-purple-500 to-pink-500",
   },
   {
     icon: MessageCircle,
@@ -74,7 +74,7 @@ const contactMethods = [
     description: "Chat with our AI assistant",
     action: "Start Conversation",
     link: "#chat",
-    color: "from-orange-500 to-orange-600",
+    color: "from-orange-500 to-red-500",
   },
 ]
 
@@ -107,7 +107,6 @@ export default function ContactSection() {
   })
   const [errors, setErrors] = useState<{ [key: string]: string }>({})
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
   const [focusedField, setFocusedField] = useState<string | null>(null)
   const sectionRef = useRef<HTMLElement>(null)
 
@@ -206,51 +205,52 @@ export default function ContactSection() {
     <section
       id="contact"
       ref={sectionRef}
-      className="py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden"
+      className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 relative overflow-hidden safe-area-bottom"
     >
-      {/* Background Elements */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 left-20 w-64 h-64 border border-blue-200 rounded-full"></div>
-        <div className="absolute bottom-20 right-20 w-48 h-48 border border-purple-200 rounded-full"></div>
+      {/* Enhanced Background Elements - Mobile optimized */}
+      <div className="absolute inset-0">
+        <div className="absolute top-10 sm:top-20 left-10 sm:left-20 w-64 sm:w-80 lg:w-96 h-64 sm:h-80 lg:h-96 bg-gradient-to-r from-blue-400/8 to-purple-600/8 rounded-full blur-2xl sm:blur-3xl"></div>
+        <div className="absolute bottom-10 sm:bottom-20 right-10 sm:right-20 w-48 sm:w-64 lg:w-80 h-48 sm:h-64 lg:h-80 bg-gradient-to-r from-purple-400/8 to-pink-600/8 rounded-full blur-2xl sm:blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 sm:w-48 lg:w-64 h-32 sm:h-48 lg:h-64 bg-gradient-to-r from-cyan-400/4 to-blue-600/4 rounded-full blur-xl sm:blur-2xl"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-4">
-            <Zap className="w-4 h-4 mr-2" />
-            Get Started Today
+      <div className="container-responsive relative z-10">
+        {/* Section Header - Mobile optimized */}
+        <div className="text-center mb-12 sm:mb-16">
+          <div className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white/90 text-xs sm:text-sm font-medium mb-4 sm:mb-6">
+            <Sparkles className="w-3 sm:w-4 h-3 sm:h-4 mr-2 text-blue-300" />
+            Get Your Free AI Audit
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 px-4 leading-tight">
+          <h2 className="text-responsive-2xl sm:text-responsive-3xl lg:text-responsive-4xl font-bold text-white mb-4 sm:mb-6 leading-tight">
             Ready to Transform Your Business?
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4 leading-relaxed">
-            Get your free AI strategy session and discover how to increase conversions by 300% in 90 days.
+          <p className="text-responsive-sm sm:text-responsive-base text-blue-100/90 max-w-4xl mx-auto leading-relaxed font-light">
+            Discover automation opportunities in 2-3 minutes and get your personalized AI strategy roadmap.
           </p>
         </div>
 
-        {/* Main Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-          {/* Lead Capture Form */}
-          <Card className="shadow-xl">
-            <CardHeader className="px-4 md:px-6">
-              <CardTitle className="text-xl md:text-2xl font-bold text-gray-900 text-center">
-                Get Your Free AI Strategy Session
+        {/* Main Content - Mobile responsive grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 mb-12 sm:mb-16">
+          {/* Lead Capture Form - Mobile optimized */}
+          <Card className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl sm:rounded-3xl shadow-2xl">
+            <CardHeader className="px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8">
+              <CardTitle className="text-xl sm:text-2xl lg:text-3xl font-bold text-white text-center mb-3 sm:mb-4">
+                Get Your Free AI Audit
               </CardTitle>
-              <p className="text-gray-600 text-center text-sm md:text-base">
-                Schedule a personalized consultation to discover your automation opportunities
+              <p className="text-white/80 text-center text-sm sm:text-base lg:text-lg leading-relaxed">
+                Discover automation opportunities in 2-3 minutes
               </p>
             </CardHeader>
-            <CardContent className="px-4 md:px-6">
-              <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
-                {/* Full Name */}
+            <CardContent className="px-4 sm:px-6 lg:px-8 pb-6 sm:pb-8">
+              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6 form-modern">
+                {/* Full Name - Mobile optimized */}
                 <div className="relative">
                   <Label
                     htmlFor="fullName"
-                    className={`absolute left-3 transition-all duration-200 pointer-events-none ${
+                    className={`absolute left-3 sm:left-4 transition-all duration-200 pointer-events-none text-white/70 ${
                       focusedField === "fullName" || formData.fullName
-                        ? "top-2 text-xs text-blue-600"
-                        : "top-4 text-gray-500"
+                        ? "top-2 text-xs text-blue-300"
+                        : "top-3 sm:top-4 text-sm sm:text-base"
                     }`}
                   >
                     Full Name *
@@ -262,17 +262,21 @@ export default function ContactSection() {
                     onChange={(e) => handleInputChange("fullName", e.target.value)}
                     onFocus={() => setFocusedField("fullName")}
                     onBlur={() => setFocusedField(null)}
-                    className={`pt-6 pb-2 h-12 md:h-14 text-base ${errors.fullName ? "border-red-500" : "border-gray-300"}`}
+                    className={`pt-5 sm:pt-6 pb-2 sm:pb-3 h-12 sm:h-14 text-sm sm:text-base text-white touch-manipulation ${
+                      errors.fullName ? "border-red-400" : "border-white/30"
+                    }`}
                   />
-                  {errors.fullName && <p className="text-red-500 text-sm mt-1">{errors.fullName}</p>}
+                  {errors.fullName && <p className="text-red-300 text-xs sm:text-sm mt-1">{errors.fullName}</p>}
                 </div>
 
-                {/* Business Email */}
+                {/* Business Email - Mobile optimized */}
                 <div className="relative">
                   <Label
                     htmlFor="email"
-                    className={`absolute left-3 transition-all duration-200 pointer-events-none ${
-                      focusedField === "email" || formData.email ? "top-2 text-xs text-blue-600" : "top-4 text-gray-500"
+                    className={`absolute left-3 sm:left-4 transition-all duration-200 pointer-events-none text-white/70 ${
+                      focusedField === "email" || formData.email
+                        ? "top-2 text-xs text-blue-300"
+                        : "top-3 sm:top-4 text-sm sm:text-base"
                     }`}
                   >
                     Business Email *
@@ -284,19 +288,21 @@ export default function ContactSection() {
                     onChange={(e) => handleInputChange("email", e.target.value)}
                     onFocus={() => setFocusedField("email")}
                     onBlur={() => setFocusedField(null)}
-                    className={`pt-6 pb-2 h-12 md:h-14 text-base ${errors.email ? "border-red-500" : "border-gray-300"}`}
+                    className={`pt-5 sm:pt-6 pb-2 sm:pb-3 h-12 sm:h-14 text-sm sm:text-base text-white touch-manipulation ${
+                      errors.email ? "border-red-400" : "border-white/30"
+                    }`}
                   />
-                  {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+                  {errors.email && <p className="text-red-300 text-xs sm:text-sm mt-1">{errors.email}</p>}
                 </div>
 
-                {/* Company Name */}
+                {/* Company Name - Mobile optimized */}
                 <div className="relative">
                   <Label
                     htmlFor="company"
-                    className={`absolute left-3 transition-all duration-200 pointer-events-none ${
+                    className={`absolute left-3 sm:left-4 transition-all duration-200 pointer-events-none text-white/70 ${
                       focusedField === "company" || formData.company
-                        ? "top-2 text-xs text-blue-600"
-                        : "top-4 text-gray-500"
+                        ? "top-2 text-xs text-blue-300"
+                        : "top-3 sm:top-4 text-sm sm:text-base"
                     }`}
                   >
                     Company Name *
@@ -308,17 +314,21 @@ export default function ContactSection() {
                     onChange={(e) => handleInputChange("company", e.target.value)}
                     onFocus={() => setFocusedField("company")}
                     onBlur={() => setFocusedField(null)}
-                    className={`pt-6 pb-2 h-12 md:h-14 text-base ${errors.company ? "border-red-500" : "border-gray-300"}`}
+                    className={`pt-5 sm:pt-6 pb-2 sm:pb-3 h-12 sm:h-14 text-sm sm:text-base text-white touch-manipulation ${
+                      errors.company ? "border-red-400" : "border-white/30"
+                    }`}
                   />
-                  {errors.company && <p className="text-red-500 text-sm mt-1">{errors.company}</p>}
+                  {errors.company && <p className="text-red-300 text-xs sm:text-sm mt-1">{errors.company}</p>}
                 </div>
 
-                {/* Phone Number */}
+                {/* Phone Number - Mobile optimized */}
                 <div className="relative">
                   <Label
                     htmlFor="phone"
-                    className={`absolute left-3 transition-all duration-200 pointer-events-none ${
-                      focusedField === "phone" || formData.phone ? "top-2 text-xs text-blue-600" : "top-4 text-gray-500"
+                    className={`absolute left-3 sm:left-4 transition-all duration-200 pointer-events-none text-white/70 ${
+                      focusedField === "phone" || formData.phone
+                        ? "top-2 text-xs text-blue-300"
+                        : "top-3 sm:top-4 text-sm sm:text-base"
                     }`}
                   >
                     Phone Number *
@@ -330,23 +340,29 @@ export default function ContactSection() {
                     onChange={(e) => handleInputChange("phone", e.target.value)}
                     onFocus={() => setFocusedField("phone")}
                     onBlur={() => setFocusedField(null)}
-                    className={`pt-6 pb-2 h-12 md:h-14 text-base ${errors.phone ? "border-red-500" : "border-gray-300"}`}
+                    className={`pt-5 sm:pt-6 pb-2 sm:pb-3 h-12 sm:h-14 text-sm sm:text-base text-white touch-manipulation ${
+                      errors.phone ? "border-red-400" : "border-white/30"
+                    }`}
                   />
-                  {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
+                  {errors.phone && <p className="text-red-300 text-xs sm:text-sm mt-1">{errors.phone}</p>}
                 </div>
 
-                {/* Monthly Revenue Range */}
+                {/* Monthly Revenue Range - Mobile optimized */}
                 <div>
-                  <Label htmlFor="revenue" className="text-sm font-medium text-gray-700 mb-2 block">
+                  <Label htmlFor="revenue" className="text-xs sm:text-sm font-medium text-white/80 mb-2 sm:mb-3 block">
                     Monthly Revenue Range
                   </Label>
                   <Select value={formData.revenue} onValueChange={(value) => handleInputChange("revenue", value)}>
-                    <SelectTrigger>
+                    <SelectTrigger className="h-12 sm:h-14 bg-white/10 backdrop-blur-sm border border-white/30 rounded-xl sm:rounded-2xl text-white text-sm sm:text-base touch-manipulation">
                       <SelectValue placeholder="Select your monthly revenue range" />
                     </SelectTrigger>
-                    <SelectContent>
+                    <SelectContent className="bg-slate-800 border-slate-600 rounded-xl sm:rounded-2xl">
                       {revenueRanges.map((range) => (
-                        <SelectItem key={range} value={range}>
+                        <SelectItem
+                          key={range}
+                          value={range}
+                          className="text-white hover:bg-slate-700 rounded-lg sm:rounded-xl text-sm sm:text-base"
+                        >
                           {range}
                         </SelectItem>
                       ))}
@@ -354,18 +370,25 @@ export default function ContactSection() {
                   </Select>
                 </div>
 
-                {/* Primary Challenge */}
+                {/* Primary Challenge - Mobile optimized */}
                 <div>
-                  <Label htmlFor="challenge" className="text-sm font-medium text-gray-700 mb-2 block">
+                  <Label
+                    htmlFor="challenge"
+                    className="text-xs sm:text-sm font-medium text-white/80 mb-2 sm:mb-3 block"
+                  >
                     Primary Challenge
                   </Label>
                   <Select value={formData.challenge} onValueChange={(value) => handleInputChange("challenge", value)}>
-                    <SelectTrigger>
+                    <SelectTrigger className="h-12 sm:h-14 bg-white/10 backdrop-blur-sm border border-white/30 rounded-xl sm:rounded-2xl text-white text-sm sm:text-base touch-manipulation">
                       <SelectValue placeholder="What's your biggest business challenge?" />
                     </SelectTrigger>
-                    <SelectContent>
+                    <SelectContent className="bg-slate-800 border-slate-600 rounded-xl sm:rounded-2xl">
                       {primaryChallenges.map((challenge) => (
-                        <SelectItem key={challenge} value={challenge}>
+                        <SelectItem
+                          key={challenge}
+                          value={challenge}
+                          className="text-white hover:bg-slate-700 rounded-lg sm:rounded-xl text-sm sm:text-base"
+                        >
                           {challenge}
                         </SelectItem>
                       ))}
@@ -373,9 +396,12 @@ export default function ContactSection() {
                   </Select>
                 </div>
 
-                {/* Additional Information */}
+                {/* Additional Information - Mobile optimized */}
                 <div>
-                  <Label htmlFor="additionalInfo" className="text-sm font-medium text-gray-700 mb-2 block">
+                  <Label
+                    htmlFor="additionalInfo"
+                    className="text-xs sm:text-sm font-medium text-white/80 mb-2 sm:mb-3 block"
+                  >
                     Additional Information (Optional)
                   </Label>
                   <Textarea
@@ -383,38 +409,38 @@ export default function ContactSection() {
                     value={formData.additionalInfo}
                     onChange={(e) => handleInputChange("additionalInfo", e.target.value)}
                     placeholder="Tell us more about your business goals and challenges..."
-                    className="min-h-[100px]"
+                    className="min-h-[100px] sm:min-h-[120px] bg-white/10 backdrop-blur-sm border border-white/30 rounded-xl sm:rounded-2xl text-white placeholder:text-white/50 text-sm sm:text-base touch-manipulation"
                   />
                 </div>
 
-                {/* Submit Button */}
+                {/* Submit Button - Mobile optimized */}
                 <Button
                   type="submit"
                   size="lg"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 transition-all duration-300 hover:scale-105 shadow-lg h-12 md:h-14 text-base md:text-lg"
+                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all duration-300 hover:scale-105 shadow-2xl h-12 sm:h-14 text-base sm:text-lg font-bold rounded-xl sm:rounded-2xl border-0 touch-manipulation"
                 >
                   {isSubmitting ? (
                     <>
-                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-                      Scheduling Your Session...
+                      <div className="animate-spin rounded-full h-4 sm:h-5 w-4 sm:w-5 border-b-2 border-white mr-2 sm:mr-3"></div>
+                      Starting Your Free AI Audit...
                     </>
                   ) : (
                     <>
-                      Schedule My Free Strategy Session
-                      <ArrowRight className="w-4 h-4 ml-2" />
+                      Start Free AI Audit
+                      <ArrowRight className="w-4 sm:w-5 h-4 sm:h-5 ml-2" />
                     </>
                   )}
                 </Button>
 
-                {/* Trust Elements */}
-                <div className="flex items-center justify-center space-x-4 text-sm text-gray-500 pt-4">
+                {/* Trust Elements - Mobile optimized */}
+                <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-6 text-xs sm:text-sm text-white/60 pt-3 sm:pt-4">
                   <div className="flex items-center">
-                    <Lock className="w-4 h-4 mr-1" />
+                    <Lock className="w-3 sm:w-4 h-3 sm:h-4 mr-1 sm:mr-2" />
                     <span>Privacy Protected</span>
                   </div>
                   <div className="flex items-center">
-                    <Shield className="w-4 h-4 mr-1" />
+                    <Shield className="w-3 sm:w-4 h-3 sm:h-4 mr-1 sm:mr-2" />
                     <span>No Spam</span>
                   </div>
                 </div>
@@ -422,34 +448,34 @@ export default function ContactSection() {
             </CardContent>
           </Card>
 
-          {/* Contact Information */}
-          <div className="space-y-8">
-            {/* Alternative Contact Methods */}
-            <Card className="shadow-lg">
-              <CardHeader>
-                <CardTitle className="text-xl font-bold text-gray-900">Other Ways to Connect</CardTitle>
-                <p className="text-gray-600">Choose the method that works best for you</p>
+          {/* Contact Information - Mobile optimized */}
+          <div className="space-y-6 sm:space-y-8">
+            {/* Alternative Contact Methods - Mobile optimized */}
+            <Card className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl sm:rounded-3xl shadow-2xl">
+              <CardHeader className="px-4 sm:px-6 pt-6 sm:pt-8">
+                <CardTitle className="text-xl sm:text-2xl font-bold text-white">Other Ways to Connect</CardTitle>
+                <p className="text-white/80 text-sm sm:text-base">Choose the method that works best for you</p>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-3 sm:space-y-4 px-4 sm:px-6 pb-6 sm:pb-8">
                 {contactMethods.map((method, index) => {
                   const IconComponent = method.icon
                   return (
                     <a
                       key={index}
                       href={method.link}
-                      className="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200 group"
+                      className="flex items-center p-3 sm:p-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl sm:rounded-2xl hover:bg-white/10 transition-all duration-300 group hover:scale-105 touch-manipulation"
                     >
                       <div
-                        className={`w-12 h-12 bg-gradient-to-r ${method.color} rounded-lg flex items-center justify-center mr-4`}
+                        className={`w-10 sm:w-12 h-10 sm:h-12 bg-gradient-to-r ${method.color} rounded-xl sm:rounded-2xl flex items-center justify-center mr-3 sm:mr-4 shadow-lg flex-shrink-0`}
                       >
-                        <IconComponent className="w-6 h-6 text-white" />
+                        <IconComponent className="w-5 sm:w-6 h-5 sm:h-6 text-white" />
                       </div>
-                      <div className="flex-1">
-                        <h3 className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-bold text-white group-hover:text-blue-300 transition-colors text-sm sm:text-base">
                           {method.title}
                         </h3>
-                        <p className="text-sm text-gray-600">{method.description}</p>
-                        <p className="text-sm font-medium text-blue-600">{method.action}</p>
+                        <p className="text-xs sm:text-sm text-white/70 truncate">{method.description}</p>
+                        <p className="text-xs sm:text-sm font-medium text-blue-300 truncate">{method.action}</p>
                       </div>
                     </a>
                   )
@@ -457,70 +483,85 @@ export default function ContactSection() {
               </CardContent>
             </Card>
 
-            {/* What to Expect */}
-            <Card className="shadow-lg">
-              <CardHeader>
-                <CardTitle className="text-xl font-bold text-gray-900 flex items-center">
-                  <Star className="w-5 h-5 mr-2 text-yellow-500" />
+            {/* What to Expect - Mobile optimized */}
+            <Card className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl sm:rounded-3xl shadow-2xl">
+              <CardHeader className="px-4 sm:px-6 pt-6 sm:pt-8">
+                <CardTitle className="text-xl sm:text-2xl font-bold text-white flex items-center">
+                  <Star className="w-5 sm:w-6 h-5 sm:h-6 mr-2 sm:mr-3 text-yellow-400 flex-shrink-0" />
                   What to Expect
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-4 sm:space-y-6 px-4 sm:px-6 pb-6 sm:pb-8">
                 <div className="flex items-start">
-                  <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3 mt-1">
-                    <Clock className="w-4 h-4 text-blue-600" />
+                  <div className="w-8 sm:w-10 h-8 sm:h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl sm:rounded-2xl flex items-center justify-center mr-3 sm:mr-4 mt-1 shadow-lg flex-shrink-0">
+                    <Clock className="w-4 sm:w-5 h-4 sm:h-5 text-white" />
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">45-Minute Strategy Session</h4>
-                    <p className="text-sm text-gray-600">
+                  <div className="min-w-0">
+                    <h4 className="font-bold text-white mb-1 sm:mb-2 text-sm sm:text-base">
+                      45-Minute Strategy Session
+                    </h4>
+                    <p className="text-xs sm:text-sm text-white/80 leading-relaxed">
                       Deep dive into your business processes and automation opportunities
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3 mt-1">
-                    <Users className="w-4 h-4 text-green-600" />
+                  <div className="w-8 sm:w-10 h-8 sm:h-10 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl sm:rounded-2xl flex items-center justify-center mr-3 sm:mr-4 mt-1 shadow-lg flex-shrink-0">
+                    <Users className="w-4 sm:w-5 h-4 sm:h-5 text-white" />
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Custom ROI Projection</h4>
-                    <p className="text-sm text-gray-600">Personalized analysis of potential revenue increases</p>
+                  <div className="min-w-0">
+                    <h4 className="font-bold text-white mb-1 sm:mb-2 text-sm sm:text-base">Custom ROI Projection</h4>
+                    <p className="text-xs sm:text-sm text-white/80 leading-relaxed">
+                      Personalized analysis of potential revenue increases
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-3 mt-1">
-                    <Award className="w-4 h-4 text-purple-600" />
+                  <div className="w-8 sm:w-10 h-8 sm:h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl sm:rounded-2xl flex items-center justify-center mr-3 sm:mr-4 mt-1 shadow-lg flex-shrink-0">
+                    <Award className="w-4 sm:w-5 h-4 sm:h-5 text-white" />
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Implementation Roadmap</h4>
-                    <p className="text-sm text-gray-600">Step-by-step plan tailored to your business needs</p>
+                  <div className="min-w-0">
+                    <h4 className="font-bold text-white mb-1 sm:mb-2 text-sm sm:text-base">Implementation Roadmap</h4>
+                    <p className="text-xs sm:text-sm text-white/80 leading-relaxed">
+                      Step-by-step plan tailored to your business needs
+                    </p>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
-            {/* Response Time */}
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
-              <div className="flex items-center mb-3">
-                <Clock className="w-6 h-6 text-blue-600 mr-2" />
-                <h3 className="font-bold text-gray-900">Quick Response Guarantee</h3>
+            {/* Response Time - Mobile optimized */}
+            <div className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 backdrop-blur-sm border border-white/20 rounded-2xl sm:rounded-3xl p-4 sm:p-6">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center mb-3 sm:mb-4">
+                <div className="w-8 sm:w-10 h-8 sm:h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl sm:rounded-2xl flex items-center justify-center mb-2 sm:mb-0 sm:mr-3 shadow-lg flex-shrink-0">
+                  <Clock className="w-4 sm:w-5 h-4 sm:h-5 text-white" />
+                </div>
+                <h3 className="font-bold text-white text-base sm:text-lg">Quick Response Guarantee</h3>
               </div>
-              <p className="text-gray-700">
-                We respond to all inquiries within <strong>2 hours</strong> during business hours (9 AM - 6 PM EST,
-                Monday - Friday).
+              <p className="text-white/90 leading-relaxed text-sm sm:text-base">
+                We respond to all inquiries within <strong className="text-blue-300">2 hours</strong> during business
+                hours (9 AM - 6 PM EST, Monday - Friday).
               </p>
             </div>
           </div>
         </div>
 
-        {/* FAQ Section */}
+        {/* FAQ Section - Mobile optimized */}
         <div className="max-w-4xl mx-auto">
-          <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">Frequently Asked Questions</h3>
-          <div className="space-y-6">
+          <h3 className="text-2xl sm:text-3xl font-bold text-white text-center mb-8 sm:mb-12">
+            Frequently Asked Questions
+          </h3>
+          <div className="space-y-4 sm:space-y-6">
             {faqItems.map((item, index) => (
-              <Card key={index} className="shadow-sm">
-                <CardContent className="p-6">
-                  <h4 className="font-semibold text-gray-900 mb-2">{item.question}</h4>
-                  <p className="text-gray-600">{item.answer}</p>
+              <Card
+                key={index}
+                className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl sm:rounded-3xl shadow-xl"
+              >
+                <CardContent className="p-4 sm:p-6 lg:p-8">
+                  <h4 className="font-bold text-white mb-3 sm:mb-4 text-base sm:text-lg leading-tight">
+                    {item.question}
+                  </h4>
+                  <p className="text-white/80 leading-relaxed text-sm sm:text-base">{item.answer}</p>
                 </CardContent>
               </Card>
             ))}
