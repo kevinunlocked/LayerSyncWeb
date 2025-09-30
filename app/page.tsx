@@ -4,6 +4,7 @@ import ServicesSection from "@/components/services-section"
 import ProcessSection from "@/components/process-section"
 import ResultsSection from "@/components/results-section"
 import PricingSection from "@/components/pricing-section"
+import SuccessStoriesSection from "@/components/success-stories-section"
 import AboutSection from "@/components/about-section"
 import ContactSection from "@/components/contact-section"
 import Footer from "@/components/footer"
@@ -22,6 +23,7 @@ export default function Home() {
         <ProcessSection />
         <ResultsSection />
         <PricingSection />
+        <SuccessStoriesSection />
         <AboutSection />
         <ContactSection />
 

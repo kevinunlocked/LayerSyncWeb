@@ -235,6 +235,15 @@ img {
   }
 }
 
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 /* Animation classes - work on all devices */
 @media (prefers-reduced-motion: no-preference) {
   .animate-float {
@@ -267,6 +276,10 @@ img {
 
   .animate-spin-slow {
     animation: spin-slow 20s linear infinite;
+  }
+
+  .animate-scroll {
+    animation: scroll 30s linear infinite;
   }
 }
 
