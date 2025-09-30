@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { ChevronDown, Zap, TrendingUp, Bot, Sparkles, Play } from "lucide-react"
+import { ChevronDown, Zap, TrendingUp, Bot, Sparkles, Play, BarChart3, Users, DollarSign } from "lucide-react"
+import Image from "next/image"
 
 export default function HeroSection() {
   const [isLoaded, setIsLoaded] = useState(false)
@@ -34,11 +35,35 @@ export default function HeroSection() {
       id="home"
       className="hero-section relative min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 flex items-center justify-center overflow-hidden pt-20 sm:pt-24 lg:pt-20 safe-area-top"
     >
-      {/* Enhanced Background Pattern with Animations */}
-      <div className="absolute inset-0 top-20 sm:top-24 lg:top-20 opacity-30">
+      {/* Enhanced AI-Tech Background with Abstract Lines */}
+      <div className="absolute inset-0 top-20 sm:top-24 lg:top-20">
+        {/* Main gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900"></div>
+        
+        {/* AI-tech gradient overlays */}
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-600/10 via-purple-600/5 to-cyan-600/10"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-blue-500/5 to-transparent"></div>
+        
+        {/* Abstract lines and geometric patterns */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-400/30 to-transparent"></div>
+          <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-400/20 to-transparent"></div>
+          <div className="absolute top-3/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent"></div>
+          
+          {/* Diagonal lines */}
+          <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-blue-400/20 to-transparent transform rotate-12"></div>
+          <div className="absolute top-0 right-1/4 w-px h-full bg-gradient-to-b from-transparent via-purple-400/20 to-transparent transform -rotate-12"></div>
+        </div>
+        
+        {/* Floating geometric shapes */}
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-blue-400/20 to-purple-600/20 rounded-full blur-3xl animate-float"></div>
         <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-gradient-to-r from-purple-400/20 to-pink-600/20 rounded-full blur-3xl animate-float-delayed"></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-r from-cyan-400/10 to-blue-600/10 rounded-full blur-2xl animate-pulse"></div>
+        
+        {/* Additional AI-themed geometric elements */}
+        <div className="absolute top-1/6 right-1/6 w-16 h-16 border border-blue-400/20 rotate-45 animate-spin-slow"></div>
+        <div className="absolute bottom-1/6 left-1/6 w-12 h-12 border border-purple-400/20 rounded-full animate-pulse"></div>
+        <div className="absolute top-2/3 right-1/3 w-8 h-8 bg-gradient-to-r from-cyan-400/30 to-blue-400/30 rounded-sm rotate-45 animate-float"></div>
       </div>
 
       {/* Animated Floating Icons - Desktop and Tablet */}
@@ -72,97 +97,171 @@ export default function HeroSection() {
         </div>
       </div>
 
-      <div className="relative z-10 container-responsive text-center py-8 sm:py-12 lg:py-16">
-        {/* Animated Badge */}
-        <div
-          className={`inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white/90 text-sm font-medium mb-6 sm:mb-8 transition-all duration-700 hover:bg-white/20 hover:scale-105 cursor-pointer ${
-            isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-          }`}
-        >
-          <Zap className="w-4 h-4 mr-2 text-blue-300 animate-pulse" />
-          AI-Powered Business Automation
-        </div>
-
-        {/* Animated Main Headline */}
-        <h1
-          className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 sm:mb-8 leading-tight max-w-6xl mx-auto transition-all duration-1000 ${
-            isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
-        >
-          <span className="bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent animate-gradient">
-            Transform Your Business
-          </span>{" "}
-          with AI Automation That Actually Works
-        </h1>
-
-        {/* Animated Subheadline */}
-        <div
-          className={`transition-all duration-1000 delay-300 ${
-            isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
-        >
-          <p className="text-lg sm:text-xl lg:text-2xl text-blue-100/90 mb-8 sm:mb-12 max-w-5xl mx-auto leading-relaxed font-light">
-            We help businesses increase conversions by{" "}
-            <span className="text-green-300 font-semibold animate-pulse">300%</span> and boost customer retention
-            through intelligent AI solutions that automate lead generation, content creation, and customer engagement
-            across all platforms.
-          </p>
-        </div>
-
-        {/* Animated Feature Cards */}
-        <div
-          className={`grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 mb-8 sm:mb-12 max-w-4xl mx-auto transition-all duration-1000 delay-500 ${
-            isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
-        >
-          {[
-            { icon: Bot, title: "AI Chatbots", color: "from-blue-500 to-cyan-500" },
-            { icon: TrendingUp, title: "Lead Generation", color: "from-purple-500 to-pink-500" },
-            { icon: Zap, title: "Automation", color: "from-green-500 to-emerald-500" },
-            { icon: Sparkles, title: "ROI Growth", color: "from-orange-500 to-red-500" },
-          ].map((feature, index) => (
+      <div className="relative z-10 container-responsive py-8 sm:py-12 lg:py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          {/* Left Column - Content */}
+          <div className="text-center lg:text-left">
+            {/* Animated Badge */}
             <div
-              key={index}
-              className={`bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 hover:bg-white/20 transition-all duration-500 hover:scale-110 hover:-translate-y-2 touch-manipulation group cursor-pointer ${
-                isLoaded ? `animate-slide-up` : ""
+              className={`inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white/90 text-sm font-medium mb-6 sm:mb-8 transition-all duration-700 hover:bg-white/20 hover:scale-105 cursor-pointer ${
+                isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
-              style={{ animationDelay: `${600 + index * 100}ms` }}
             >
-              <div
-                className={`w-8 sm:w-10 lg:w-12 h-8 sm:h-10 lg:h-12 bg-gradient-to-r ${feature.color} rounded-lg sm:rounded-xl flex items-center justify-center mb-2 sm:mb-3 lg:mb-4 shadow-lg mx-auto group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}
-              >
-                <feature.icon className="w-4 sm:w-5 lg:w-6 h-4 sm:h-5 lg:h-6 text-white" />
-              </div>
-              <h3 className="text-white font-semibold text-xs sm:text-sm lg:text-base leading-tight text-center group-hover:text-blue-200 transition-colors duration-300">
-                {feature.title}
-              </h3>
+              <Zap className="w-4 h-4 mr-2 text-blue-300 animate-pulse" />
+              AI-Powered Growth Systems
             </div>
-          ))}
-        </div>
 
-        {/* Animated CTA Buttons */}
-        <div
-          className={`flex flex-col gap-4 sm:flex-row sm:gap-6 justify-center items-center max-w-2xl mx-auto transition-all duration-1000 delay-1000 ${
-            isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
-        >
-          <Button
-            size="lg"
-            onClick={() => scrollToSection("#contact")}
-            className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold rounded-2xl shadow-2xl transition-all duration-300 hover:scale-110 hover:shadow-3xl border-0 min-h-[56px] touch-manipulation animate-pulse-glow"
-          >
-            Get Your Free AI Strategy Session
-            <Sparkles className="ml-2 w-5 h-5 animate-spin" />
-          </Button>
+            {/* Animated Main Headline */}
+            <h1
+              className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 sm:mb-8 leading-tight transition-all duration-1000 ${
+                isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+            >
+              <span className="bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent animate-gradient">
+                Double Your Leads
+              </span>{" "}
+              with AI-Powered Growth Systems
+            </h1>
 
-          <Button
-            size="lg"
-            variant="outline"
-            className="w-full sm:w-auto border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm px-8 py-4 text-lg font-semibold rounded-2xl transition-all duration-300 hover:scale-110 hover:border-white/50 bg-transparent min-h-[56px] touch-manipulation group"
+            {/* Animated Subheadline */}
+            <div
+              className={`transition-all duration-1000 delay-300 ${
+                isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+            >
+              <p className="text-lg sm:text-xl lg:text-2xl text-blue-100/90 mb-8 sm:mb-12 leading-relaxed font-light">
+                We help law firms, solar companies, and financial professionals automate operations, close more deals, and scale efficiently with custom AI solutions.
+              </p>
+            </div>
+
+            {/* Client Logos */}
+            <div
+              className={`mb-8 sm:mb-12 transition-all duration-1000 delay-500 ${
+                isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+            >
+              <p className="text-sm text-blue-200/70 mb-4 font-medium">Trusted by industry leaders</p>
+              <div className="flex flex-wrap justify-center lg:justify-start items-center gap-6 sm:gap-8">
+                {["Client A", "Client B", "Client C"].map((client, index) => (
+                  <div
+                    key={index}
+                    className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg px-4 py-2 text-white/80 text-sm font-medium hover:bg-white/10 transition-all duration-300 hover:scale-105"
+                  >
+                    {client}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Animated CTA Buttons */}
+            <div
+              className={`flex flex-col gap-4 sm:flex-row sm:gap-6 justify-center lg:justify-start items-center transition-all duration-1000 delay-1000 ${
+                isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+            >
+              <Button
+                size="lg"
+                onClick={() => scrollToSection("#contact")}
+                className="w-full sm:w-auto bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-8 py-4 text-lg font-semibold rounded-2xl shadow-2xl transition-all duration-300 hover:scale-110 hover:shadow-3xl border-0 min-h-[56px] touch-manipulation animate-pulse-glow"
+              >
+                Get My Free AI Plan
+                <Sparkles className="ml-2 w-5 h-5 animate-spin" />
+              </Button>
+
+              <Button
+                size="lg"
+                variant="outline"
+                className="w-full sm:w-auto border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm px-8 py-4 text-lg font-semibold rounded-2xl transition-all duration-300 hover:scale-110 hover:border-white/50 bg-transparent min-h-[56px] touch-manipulation group"
+              >
+                <BarChart3 className="mr-2 w-5 h-5 group-hover:scale-125 transition-transform duration-300" />
+                See Case Studies
+              </Button>
+            </div>
+          </div>
+
+          {/* Right Column - AI Dashboard Mockup */}
+          <div
+            className={`relative transition-all duration-1000 delay-700 ${
+              isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
           >
-            <Play className="mr-2 w-5 h-5 group-hover:scale-125 transition-transform duration-300" />
-            See How It Works
-          </Button>
+            <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-6 shadow-2xl">
+              {/* Mockup Header */}
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center gap-3">
+                  <div className="w-3 h-3 bg-red-400 rounded-full"></div>
+                  <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                  <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+                </div>
+                <div className="text-white/60 text-sm font-medium">AI Dashboard</div>
+              </div>
+
+              {/* Mockup Content */}
+              <div className="space-y-4">
+                {/* Stats Row */}
+                <div className="grid grid-cols-3 gap-4">
+                  <div className="bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-xl p-4 border border-white/10">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Users className="w-4 h-4 text-blue-300" />
+                      <span className="text-xs text-white/70">Leads</span>
+                    </div>
+                    <div className="text-2xl font-bold text-white">2,847</div>
+                    <div className="text-xs text-green-300">+127%</div>
+                  </div>
+                  <div className="bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-xl p-4 border border-white/10">
+                    <div className="flex items-center gap-2 mb-2">
+                      <DollarSign className="w-4 h-4 text-green-300" />
+                      <span className="text-xs text-white/70">Revenue</span>
+                    </div>
+                    <div className="text-2xl font-bold text-white">$184K</div>
+                    <div className="text-xs text-green-300">+89%</div>
+                  </div>
+                  <div className="bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-xl p-4 border border-white/10">
+                    <div className="flex items-center gap-2 mb-2">
+                      <TrendingUp className="w-4 h-4 text-purple-300" />
+                      <span className="text-xs text-white/70">Growth</span>
+                    </div>
+                    <div className="text-2xl font-bold text-white">312%</div>
+                    <div className="text-xs text-green-300">+45%</div>
+                  </div>
+                </div>
+
+                {/* Chart Area */}
+                <div className="bg-gradient-to-r from-slate-800/50 to-slate-700/50 rounded-xl p-4 border border-white/10">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-sm text-white/70">AI Performance</span>
+                    <div className="flex gap-1">
+                      <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                      <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                      <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
+                    </div>
+                  </div>
+                  <div className="h-20 bg-gradient-to-r from-green-500/20 via-blue-500/20 to-purple-500/20 rounded-lg flex items-end justify-between p-2">
+                    {[40, 65, 45, 80, 70, 90, 85].map((height, index) => (
+                      <div
+                        key={index}
+                        className="bg-gradient-to-t from-blue-400 to-purple-400 rounded-sm"
+                        style={{ height: `${height}%`, width: '12%' }}
+                      ></div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* AI Status */}
+                <div className="flex items-center justify-between bg-gradient-to-r from-green-500/10 to-emerald-500/10 rounded-xl p-4 border border-green-500/20">
+                  <div className="flex items-center gap-3">
+                    <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                    <span className="text-sm text-white font-medium">AI System Active</span>
+                  </div>
+                  <span className="text-xs text-green-300">24/7 Monitoring</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Floating elements around mockup */}
+            <div className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full animate-float opacity-60"></div>
+            <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full animate-float-delayed opacity-60"></div>
+          </div>
         </div>
 
         {/* Animated Trust Indicators */}

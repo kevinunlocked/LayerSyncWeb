@@ -226,6 +226,15 @@ img {
   }
 }
 
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 /* Animation classes - work on all devices */
 @media (prefers-reduced-motion: no-preference) {
   .animate-float {
@@ -254,6 +263,10 @@ img {
   .animate-scale-in {
     animation: scale-in 0.6s ease-out forwards;
     opacity: 0;
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 20s linear infinite;
   }
 }
 
