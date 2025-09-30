@@ -10,20 +10,28 @@ import Tooltip from "@/components/ui/tooltip"
 const pricingTiers = [
   {
     id: 1,
-    name: "Starter AI System",
+    name: "Entry Plan",
     price: 1500,
     description:
-      "Perfect for businesses ready to start generating 2x more leads and revenue with AI that works while you sleep.",
+      "Perfect for small businesses ready to start generating 2x more leads and revenue with AI that works while you sleep.",
     popular: false,
+    deliverables: [
+      "AI lead generation system setup",
+      "Basic content automation (20 pieces/week)",
+      "Email marketing automation",
+      "Weekly performance reports",
+      "24/7 customer support",
+      "30-day results guarantee"
+    ],
     benefits: [
-      "• Generate 10x more qualified leads automatically",
-      "• Convert 40% more website visitors into customers", 
-      "• Create 50+ pieces of content per week without writing",
-      "• Save 20+ hours per week on marketing tasks",
-      "• Get 24/7 customer support that never sleeps",
+      "• Generate 5x more qualified leads automatically",
+      "• Convert 30% more website visitors into customers", 
+      "• Create 20+ pieces of content per week without writing",
+      "• Save 15+ hours per week on marketing tasks",
+      "• Get dedicated support that never sleeps",
       "• See results in your first 30 days"
     ],
-    cta: "Get Started",
+    cta: "Book My Free AI Plan",
     color: "from-blue-500 to-blue-600",
   },
   {
@@ -33,15 +41,25 @@ const pricingTiers = [
     description:
       "For businesses serious about scaling fast - get 5x more revenue with advanced AI that handles your entire marketing funnel.",
     popular: true,
+    deliverables: [
+      "Everything in Entry Plan, plus:",
+      "Dedicated AI agent setup",
+      "Advanced content automation (50+ pieces/week)",
+      "Social media management automation",
+      "Paid advertising automation",
+      "Monthly strategy calls",
+      "Custom performance dashboards",
+      "Dedicated success manager"
+    ],
     benefits: [
-      "• Everything in Starter AI System, plus:",
+      "• Everything in Entry Plan, plus:",
       "• Run profitable ads on Facebook, Google & LinkedIn automatically",
       "• Get a dedicated success manager who knows your business",
       "• Monthly strategy calls to maximize your results",
       "• Custom dashboards showing exactly how much you're earning",
       "• Scale to 5x revenue without hiring more staff"
     ],
-    cta: "Get Started",
+    cta: "Book My Free AI Plan",
     color: "from-purple-500 to-purple-600",
   },
   {
@@ -52,6 +70,16 @@ const pricingTiers = [
     description:
       "For established businesses that want to dominate their market - get custom AI built specifically for your industry and scale to 10x revenue.",
     popular: false,
+    deliverables: [
+      "Everything in Growth AI System, plus:",
+      "Custom AI development for your industry",
+      "System integration (CRM, tools, databases)",
+      "White-label AI solutions",
+      "Priority 24/7 support",
+      "Quarterly strategy sessions",
+      "Unlimited customizations",
+      "Dedicated engineering team"
+    ],
     benefits: [
       "• Everything in Growth AI System, plus:",
       "• Custom AI built specifically for your industry",
@@ -61,7 +89,7 @@ const pricingTiers = [
       "• Quarterly strategy sessions with AI specialists",
       "• Unlimited customizations and feature requests"
     ],
-    cta: "Get Started",
+    cta: "Book My Free AI Plan",
     color: "from-orange-500 to-orange-600",
   },
 ]
@@ -162,7 +190,7 @@ export default function PricingSection() {
         </div>
 
         {/* Pricing Cards - Single Layout for All Devices */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {pricingTiers.map((tier, index) => {
             const price = getPrice(tier.price)
 
@@ -170,7 +198,7 @@ export default function PricingSection() {
               <div key={tier.id} className="w-full">
                 <Card
                   className={`relative h-full transition-all duration-300 hover:shadow-xl ${
-                    tier.popular ? "ring-2 ring-purple-500 shadow-xl lg:scale-105" : ""
+                    tier.popular ? "ring-2 ring-purple-500 shadow-xl" : ""
                   }`}
                   onMouseEnter={() => setHoveredCard(tier.id)}
                   onMouseLeave={() => setHoveredCard(null)}
@@ -185,33 +213,55 @@ export default function PricingSection() {
                     </div>
                   )}
 
-                  <CardHeader className="text-center pb-6 px-6 pt-8">
-                    <CardTitle className="text-2xl font-bold text-gray-900 mb-3">{tier.name}</CardTitle>
-                    <p className="text-gray-600 mb-6 text-base leading-relaxed">{tier.description}</p>
+                  <CardHeader className="text-center pb-4 px-4 pt-6">
+                    <CardTitle className="text-lg font-bold text-gray-900 mb-2">{tier.name}</CardTitle>
+                    <p className="text-gray-600 mb-4 text-sm leading-relaxed">{tier.description}</p>
 
                     {/* Price */}
                     <div className="mb-6">
                       <div className="flex items-baseline justify-center">
-                        <span className="text-4xl md:text-5xl font-bold text-gray-900">${price.toLocaleString()}</span>
-                        {tier.priceNote && <span className="text-2xl font-bold text-gray-900">{tier.priceNote}</span>}
-                        <span className="text-gray-600 ml-2 text-base">/month</span>
+                        <span className="text-3xl md:text-4xl font-bold text-gray-900">${price.toLocaleString()}</span>
+                        {tier.priceNote && <span className="text-xl font-bold text-gray-900">{tier.priceNote}</span>}
+                        <span className="text-gray-600 ml-2 text-sm">/month</span>
                       </div>
                       {billingCycle === "annual" && (
                         <p className="text-sm text-green-600 mt-2">Save ${(tier.price - price) * 12}/year</p>
                       )}
+                      {/* Guarantee Text */}
+                      <div className="mt-3 text-center">
+                        <p className="text-xs text-gray-600 font-medium">
+                          90-Day ROI Guarantee | Cancel Anytime | No Setup Fees
+                        </p>
+                      </div>
                     </div>
                   </CardHeader>
 
-                  <CardContent className="px-6 pb-8 flex-1 flex flex-col">
+                  <CardContent className="px-4 pb-6 flex-1 flex flex-col">
+                    {/* Deliverables List */}
+                    <div className="mb-6">
+                      <h4 className="text-sm font-semibold text-gray-900 mb-3 text-center">What You Get:</h4>
+                      <ul className="space-y-2">
+                        {tier.deliverables.map((deliverable, deliverableIndex) => (
+                          <li key={deliverableIndex} className="flex items-start text-gray-700">
+                            <div className="w-4 h-4 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 bg-blue-100">
+                              <Check className="w-2.5 h-2.5 text-blue-600" />
+                            </div>
+                            <span className="leading-relaxed text-xs">{deliverable}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
                     {/* Benefits List */}
-                    <div className="mb-8 flex-1">
-                      <ul className="space-y-3">
+                    <div className="mb-6 flex-1">
+                      <h4 className="text-sm font-semibold text-gray-900 mb-3 text-center">Key Benefits:</h4>
+                      <ul className="space-y-2">
                         {tier.benefits.map((benefit, benefitIndex) => (
                           <li key={benefitIndex} className="flex items-start text-gray-700">
-                            <div className="w-5 h-5 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 bg-green-100">
-                              <Check className="w-3 h-3 text-green-600" />
+                            <div className="w-4 h-4 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 bg-green-100">
+                              <Check className="w-2.5 h-2.5 text-green-600" />
                             </div>
-                            <span className="leading-relaxed text-sm">{benefit}</span>
+                            <span className="leading-relaxed text-xs">{benefit}</span>
                           </li>
                         ))}
                       </ul>
@@ -221,7 +271,7 @@ export default function PricingSection() {
                     <Button
                       size="lg"
                       onClick={() => scrollToSection("#contact")}
-                      className={`w-full h-12 md:h-14 text-base md:text-lg font-semibold transition-all duration-300 hover:scale-105 ${
+                      className={`w-full h-10 md:h-12 text-sm md:text-base font-semibold transition-all duration-300 hover:scale-105 ${
                         tier.popular
                           ? "bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 shadow-lg"
                           : `bg-gradient-to-r ${tier.color} hover:shadow-lg`
@@ -231,7 +281,7 @@ export default function PricingSection() {
                     </Button>
 
                     {/* Additional Info */}
-                    <p className="text-center text-sm text-gray-500 mt-4">
+                    <p className="text-center text-xs text-gray-500 mt-3">
                       Setup in 24-48 hours • No long-term contracts
                     </p>
                   </CardContent>
