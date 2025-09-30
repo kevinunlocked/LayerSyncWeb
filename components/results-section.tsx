@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { TrendingUp, Shield, Clock, Users, Calculator, ExternalLink, Award, CheckCircle } from "lucide-react"
+import Tooltip from "@/components/ui/tooltip"
 
 const metrics = [
   {
@@ -11,8 +12,8 @@ const metrics = [
     icon: TrendingUp,
     number: 300,
     suffix: "%",
-    label: "Average ROI",
-    description: "Return on investment within 90 days of implementation",
+    label: "Average Revenue Increase",
+    description: "Most clients see 3x more revenue within 90 days",
     color: "from-green-500 to-green-600",
     glowColor: "shadow-green-500/25",
   },
@@ -21,8 +22,8 @@ const metrics = [
     icon: Shield,
     number: 90,
     suffix: "-Day",
-    label: "Payback Guarantee",
-    description: "Full refund if you don't see measurable results",
+    label: "Money-Back Guarantee",
+    description: "If you don't make more money, we refund everything",
     color: "from-blue-500 to-blue-600",
     glowColor: "shadow-blue-500/25",
   },
@@ -31,18 +32,18 @@ const metrics = [
     icon: Clock,
     number: 24,
     suffix: "/7",
-    label: "AI Support",
-    description: "Round-the-clock automated customer service",
+    label: "AI Never Sleeps",
+    description: "Your AI works around the clock to make you money",
     color: "from-purple-500 to-purple-600",
     glowColor: "shadow-purple-500/25",
   },
   {
     id: 4,
     icon: Users,
-    number: 2,
+    number: 50,
     suffix: "+",
-    label: "Years Experience",
-    description: "Deep expertise in AI automation and business growth",
+    label: "Businesses Helped",
+    description: "Real companies that doubled their revenue with us",
     color: "from-orange-500 to-orange-600",
     glowColor: "shadow-orange-500/25",
   },
@@ -121,12 +122,11 @@ export default function ResultsSection() {
             <TrendingUp className="w-4 h-4 mr-2" />
             Proven Results
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 px-4 leading-tight">
-            Numbers That Speak for Themselves
-          </h2>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 px-4 leading-tight">
+            Real Results From Real Businesses
+          </h1>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4 leading-relaxed">
-            Our track record with a select group of businesses speaks volumes. Here's what our current clients achieve
-            with LayerSync AI automation solutions.
+            These aren't just numbers - they're real revenue increases from businesses just like yours that trusted us to help them grow.
           </p>
         </div>
 
@@ -197,24 +197,22 @@ export default function ResultsSection() {
               <Calculator className="w-6 h-6 text-white" />
             </div>
             <div className="flex-1">
-              <h3 className="text-xl font-bold text-gray-900 mb-3">How We Calculate ROI</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">How We Measure Your Success</h3>
               <p className="text-gray-700 mb-4 leading-relaxed">
-                Our ROI calculations are based on measurable improvements in lead conversion rates, customer retention,
-                and operational efficiency. We track revenue increases against implementation costs over a 90-day
-                period.
+                We track the metrics that actually matter to your bottom line - more leads, higher conversion rates, and increased revenue. Every dollar we help you make is measured and reported.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
                 <div className="flex items-center">
                   <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-                  <span>Increased conversion rates</span>
+                  <span>More qualified leads = more sales</span>
                 </div>
                 <div className="flex items-center">
                   <div className="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
-                  <span>Reduced operational costs</span>
+                  <span>Higher conversion rates = more revenue</span>
                 </div>
                 <div className="flex items-center">
                   <div className="w-2 h-2 bg-purple-500 rounded-full mr-2"></div>
-                  <span>Enhanced customer lifetime value</span>
+                  <span>Better customer retention = repeat business</span>
                 </div>
               </div>
             </div>
@@ -248,11 +246,15 @@ export default function ResultsSection() {
           
           <div className="flex items-center bg-white rounded-lg px-4 py-2 shadow-sm border">
             <Shield className="w-5 h-5 text-green-500 mr-2" />
-            <span className="text-sm font-medium text-gray-700">SOC 2 Certified</span>
+            <Tooltip content="SOC 2 is a security certification that ensures your data is protected with enterprise-grade security measures">
+              <span className="text-sm font-medium text-gray-700">SOC 2 Certified</span>
+            </Tooltip>
           </div>
           <div className="flex items-center bg-white rounded-lg px-4 py-2 shadow-sm border">
             <CheckCircle className="w-5 h-5 text-blue-500 mr-2" />
-            <span className="text-sm font-medium text-gray-700">ISO 27001 Compliant</span>
+            <Tooltip content="ISO 27001 is an international standard for information security management that ensures your data is handled securely">
+              <span className="text-sm font-medium text-gray-700">ISO 27001 Compliant</span>
+            </Tooltip>
           </div>
         </div>
 

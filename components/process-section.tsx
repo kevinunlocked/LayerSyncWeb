@@ -10,64 +10,64 @@ const processSteps = [
     id: 1,
     number: "01",
     icon: Search,
-    headline: "AI Audit & Strategy",
+    headline: "Free Revenue Analysis",
     description:
-      "Free consultation to identify automation opportunities and create a customized roadmap for your business growth.",
-    details: [
-      "Comprehensive business analysis",
-      "Automation opportunity mapping",
-      "ROI projections and timeline",
-      "Custom strategy development",
+      "We analyze your business to find exactly where AI can make you the most money - no technical jargon, just clear opportunities.",
+    benefits: [
+      "• Find 3-5 ways to double your revenue with AI",
+      "• Get exact ROI projections for each opportunity",
+      "• See which areas will give you the biggest impact",
+      "• Get a custom roadmap tailored to your business"
     ],
     duration: "1-2 weeks",
-    deliverable: "Strategic Implementation Plan",
+    deliverable: "Your Revenue Growth Plan",
   },
   {
     id: 2,
     number: "02",
     icon: Settings,
-    headline: "Custom Implementation",
+    headline: "Build Your AI Systems",
     description:
-      "Tailored AI solutions designed for your specific business needs, built with scalability and efficiency in mind.",
-    details: [
-      "Custom AI solution development",
-      "Brand voice and tone integration",
-      "Multi-platform compatibility",
-      "Quality assurance testing",
+      "We build AI that actually works for your business - no generic solutions, just custom systems designed to make you more money.",
+    benefits: [
+      "• AI that sounds exactly like your brand",
+      "• Systems that work with your existing tools",
+      "• Everything tested and ready to generate revenue",
+      "• No technical setup required on your end"
     ],
     duration: "2-4 weeks",
-    deliverable: "Fully Functional AI Systems",
+    deliverable: "Revenue-Generating AI Systems",
   },
   {
     id: 3,
     number: "03",
     icon: Handshake,
-    headline: "Integration & Training",
+    headline: "Launch & Train Your Team",
     description:
-      "Seamless integration with existing systems and comprehensive team training to ensure smooth adoption.",
-    details: [
-      "CRM and system integration",
-      "Team training sessions",
-      "Documentation and guides",
-      "Initial performance monitoring",
+      "We launch everything and train your team so you can start making money immediately - no learning curve, just results.",
+    benefits: [
+      "• Everything goes live and starts working immediately",
+      "• Your team learns how to use it in 30 minutes",
+      "• We handle all the technical stuff for you",
+      "• You start seeing results in the first week"
     ],
     duration: "1-2 weeks",
-    deliverable: "Trained Team & Live Systems",
+    deliverable: "Live Systems Making You Money",
   },
   {
     id: 4,
     number: "04",
     icon: TrendingUp,
-    headline: "Optimization & Growth",
-    description: "Ongoing monitoring, optimization, and scaling of AI solutions to maximize ROI and business growth.",
-    details: [
-      "Performance analytics and reporting",
-      "Continuous optimization",
-      "Feature updates and enhancements",
-      "Strategic growth planning",
+    headline: "Scale & Optimize",
+    description: "We keep optimizing your AI to make you even more money - monthly reports show exactly how much you're earning.",
+    benefits: [
+      "• Monthly reports showing your exact revenue growth",
+      "• We optimize everything to maximize your profits",
+      "• Add new features as your business grows",
+      "• Scale to 10x revenue without hiring more staff"
     ],
     duration: "Ongoing",
-    deliverable: "Sustained Growth & ROI",
+    deliverable: "Continuous Revenue Growth",
   },
 ]
 
@@ -129,11 +129,11 @@ export default function ProcessSection() {
             <Zap className="w-4 h-4 mr-2" />
             Our Process
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 px-4 leading-tight">
-            From Strategy to Success in 4 Simple Steps
-          </h2>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 px-4 leading-tight">
+            How We Help You Double Revenue in 4 Simple Steps
+          </h1>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4 leading-relaxed">
-            Our proven methodology ensures seamless AI implementation that delivers measurable results from day one.
+            Our proven process has helped 50+ businesses double their revenue - here's exactly how we'll do it for you.
           </p>
         </div>
 
@@ -207,28 +207,17 @@ export default function ProcessSection() {
                           <div className="text-blue-600 font-medium">{step.deliverable}</div>
                         </div>
 
-                        {/* Expandable Details */}
-                        <div
-                          className={`transition-all duration-300 overflow-hidden ${
-                            isExpanded ? "max-h-48 opacity-100" : "max-h-0 opacity-0"
-                          }`}
-                        >
-                          <div className="border-t border-gray-200 pt-4">
-                            <h4 className="font-semibold text-gray-900 mb-3">What's Included:</h4>
-                            <ul className="space-y-2">
-                              {step.details.map((detail, detailIndex) => (
-                                <li key={detailIndex} className="flex items-center text-sm text-gray-600">
-                                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2 flex-shrink-0"></div>
-                                  {detail}
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
+                        {/* Benefits List - Always visible */}
+                        <div className="border-t border-gray-200 pt-4">
+                          <h4 className="font-semibold text-gray-900 mb-3">What You Get:</h4>
+                          <ul className="space-y-2">
+                            {step.benefits.map((benefit, benefitIndex) => (
+                              <li key={benefitIndex} className="text-sm text-gray-600 leading-relaxed">
+                                {benefit}
+                              </li>
+                            ))}
+                          </ul>
                         </div>
-
-                        <Button variant="ghost" className="w-full mt-4 text-blue-600 hover:bg-blue-50">
-                          {isExpanded ? "Show Less" : "Learn More"}
-                        </Button>
                       </CardContent>
                     </Card>
                   </div>
@@ -301,28 +290,17 @@ export default function ProcessSection() {
                           <div className="text-blue-600 font-medium">{step.deliverable}</div>
                         </div>
 
-                        {/* Expandable Details */}
-                        <div
-                          className={`transition-all duration-300 overflow-hidden ${
-                            isExpanded ? "max-h-48 opacity-100" : "max-h-0 opacity-0"
-                          }`}
-                        >
-                          <div className="border-t border-gray-200 pt-4">
-                            <h4 className="font-semibold text-gray-900 mb-3">What's Included:</h4>
-                            <ul className="space-y-2">
-                              {step.details.map((detail, detailIndex) => (
-                                <li key={detailIndex} className="flex items-center text-sm text-gray-600">
-                                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2 flex-shrink-0"></div>
-                                  {detail}
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
+                        {/* Benefits List - Always visible */}
+                        <div className="border-t border-gray-200 pt-4">
+                          <h4 className="font-semibold text-gray-900 mb-3">What You Get:</h4>
+                          <ul className="space-y-2">
+                            {step.benefits.map((benefit, benefitIndex) => (
+                              <li key={benefitIndex} className="text-sm text-gray-600 leading-relaxed">
+                                {benefit}
+                              </li>
+                            ))}
+                          </ul>
                         </div>
-
-                        <Button variant="ghost" className="w-full mt-4 text-blue-600 hover:bg-blue-50">
-                          {isExpanded ? "Show Less" : "Learn More"}
-                        </Button>
                       </CardContent>
                     </Card>
                   </div>

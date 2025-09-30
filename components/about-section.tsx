@@ -120,23 +120,31 @@ const industries = [
 const valueProp = [
   {
     icon: Target,
-    title: "Strategic Approach",
-    description: "We don't just implement technology—we transform your entire business process for maximum impact.",
+    title: "We Focus on Revenue, Not Tech",
+    description: "• Every AI system we build is designed to make you more money",
+    description2: "• We measure success by your revenue growth, not technical complexity",
+    description3: "• You see results in your first month, not after 6 months of setup"
   },
   {
     icon: Shield,
-    title: "Proven Methodology",
-    description: "Our 4-step process has delivered consistent results across 500+ successful implementations.",
+    title: "Proven 4-Step Process",
+    description: "• Our method has generated 300% ROI for every client",
+    description2: "• We've helped 50+ businesses double their revenue",
+    description3: "• 90-day money-back guarantee if you don't see results"
   },
   {
     icon: Users,
-    title: "Dedicated Support",
-    description: "24/7 ongoing support and optimization ensures your AI systems continue delivering results.",
+    title: "24/7 Support That Actually Helps",
+    description: "• Real humans answer your questions, not chatbots",
+    description2: "• We optimize your systems weekly to maximize results",
+    description3: "• You get a dedicated success manager who knows your business"
   },
   {
     icon: TrendingUp,
-    title: "Measurable Results",
-    description: "Every implementation comes with clear KPIs and our 90-day ROI guarantee.",
+    title: "Guaranteed Revenue Growth",
+    description: "• We track every metric that matters to your bottom line",
+    description2: "• Monthly reports show exactly how much money you're making",
+    description3: "• If we don't deliver results, you get your money back"
   },
 ]
 
@@ -153,12 +161,11 @@ export default function AboutSection() {
             <Users className="w-3 sm:w-4 h-3 sm:h-4 mr-1.5 sm:mr-2" />
             About LayerSync AI
           </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
-            Why LayerSync AI Is Your Trusted Partner for AI Transformation
-          </h2>
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
+            Why Businesses Choose Us for 300% Revenue Growth
+          </h1>
           <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            We're currently automating growth for a select group of businesses ready to scale with AI. We're your
-            strategic partner in business transformation, delivering measurable results that drive real growth.
+            We don't just implement AI - we transform your entire business to generate more revenue, save time, and scale faster than you ever thought possible.
           </p>
         </div>
 
@@ -174,9 +181,7 @@ export default function AboutSection() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-700 leading-relaxed text-base sm:text-lg">
-                  To democratize AI automation for businesses of all sizes, making cutting-edge technology accessible
-                  and profitable. We believe every business deserves the competitive advantage that intelligent
-                  automation provides.
+                  To help every business double their revenue with AI that actually works - no technical complexity, no months of setup, just real results that start showing in your first month.
                 </p>
               </CardContent>
             </Card>
@@ -190,8 +195,7 @@ export default function AboutSection() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-700 leading-relaxed text-base sm:text-lg">
-                  To become the global leader in AI business transformation, creating a world where intelligent
-                  automation empowers businesses to achieve unprecedented growth and efficiency.
+                  To be the go-to partner for businesses that want to scale fast and smart - where every AI system we build delivers measurable revenue growth from day one.
                 </p>
               </CardContent>
             </Card>
@@ -200,9 +204,9 @@ export default function AboutSection() {
 
         {/* Company Statistics - Mobile responsive grid */}
         <div className="mb-16 sm:mb-20">
-          <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 text-center mb-8 sm:mb-12">
-            Our Track Record Speaks for Itself
-          </h3>
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 text-center mb-8 sm:mb-12">
+            Results That Speak for Themselves
+          </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
             {companyStats.map((stat, index) => {
               const IconComponent = stat.icon
@@ -366,7 +370,11 @@ export default function AboutSection() {
                       </div>
                       <div>
                         <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">{prop.title}</h4>
-                        <p className="text-gray-600 leading-relaxed text-sm sm:text-base">{prop.description}</p>
+                        <div className="space-y-1">
+                          <p className="text-gray-600 leading-relaxed text-sm sm:text-base">{prop.description}</p>
+                          <p className="text-gray-600 leading-relaxed text-sm sm:text-base">{prop.description2}</p>
+                          <p className="text-gray-600 leading-relaxed text-sm sm:text-base">{prop.description3}</p>
+                        </div>
                       </div>
                     </div>
                   </CardContent>

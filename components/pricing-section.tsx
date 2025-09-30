@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Check, Star, Shield, Clock, CreditCard, Zap, Award } from "lucide-react"
+import Tooltip from "@/components/ui/tooltip"
 
 const pricingTiers = [
   {
@@ -12,29 +13,17 @@ const pricingTiers = [
     name: "Starter AI System",
     price: 1500,
     description:
-      "The essential AI system for businesses to automate lead generation, client engagement, content creation, and social media management without heavy overhead.",
+      "Perfect for businesses ready to start generating 2x more leads and revenue with AI that works while you sleep.",
     popular: false,
-    featureGroups: [
-      {
-        title: "AI-powered Lead & Engagement System:",
-        features: [
-          "AI-powered lead generation (LinkedIn + cold email outreach)",
-          "Advanced 24/7 AI chatbot support",
-          "AI-generated email follow-up sequences",
-          "AI-powered lead capture and qualification",
-          "Automated appointment/booking scheduling",
-        ],
-      },
-      {
-        title: "AI-powered Content & Social Media System:",
-        features: [
-          "AI-powered content marketing (SEO blogs + social media)",
-          "Weekly AI-generated posts and scheduling",
-          "AI-generated video content & ad creatives",
-        ],
-      },
+    benefits: [
+      "• Generate 10x more qualified leads automatically",
+      "• Convert 40% more website visitors into customers", 
+      "• Create 50+ pieces of content per week without writing",
+      "• Save 20+ hours per week on marketing tasks",
+      "• Get 24/7 customer support that never sleeps",
+      "• See results in your first 30 days"
     ],
-    cta: "Contact Sales",
+    cta: "Get Started",
     color: "from-blue-500 to-blue-600",
   },
   {
@@ -42,31 +31,17 @@ const pricingTiers = [
     name: "Growth AI System",
     price: 3500,
     description:
-      "An advanced AI system for teams focused on boosting visibility and scaling inbound marketing with deeper, integrated automation.",
+      "For businesses serious about scaling fast - get 5x more revenue with advanced AI that handles your entire marketing funnel.",
     popular: true,
-    featureGroups: [
-      {
-        title: "Everything in Starter AI System, plus:",
-        features: [],
-        highlight: true,
-      },
-      {
-        title: "AI-powered Marketing Funnel System:",
-        features: [
-          "Full marketing funnel automation (CRM workflows, email, retargeting)",
-          "Paid ad campaign setup & management (Meta, Google, LinkedIn)",
-        ],
-      },
-      {
-        title: "Dedicated AI Support & Strategy:",
-        features: [
-          "Dedicated account manager",
-          "Monthly strategy & optimization call",
-          "Custom reporting dashboards and analytics",
-        ],
-      },
+    benefits: [
+      "• Everything in Starter AI System, plus:",
+      "• Run profitable ads on Facebook, Google & LinkedIn automatically",
+      "• Get a dedicated success manager who knows your business",
+      "• Monthly strategy calls to maximize your results",
+      "• Custom dashboards showing exactly how much you're earning",
+      "• Scale to 5x revenue without hiring more staff"
     ],
-    cta: "Contact Sales",
+    cta: "Get Started",
     color: "from-purple-500 to-purple-600",
   },
   {
@@ -75,45 +50,27 @@ const pricingTiers = [
     price: 5000,
     priceNote: "+",
     description:
-      "A comprehensive, full-stack AI marketing & infrastructure system for high-revenue firms seeking to dominate their market with intelligent, custom automation.",
+      "For established businesses that want to dominate their market - get custom AI built specifically for your industry and scale to 10x revenue.",
     popular: false,
-    featureGroups: [
-      {
-        title: "Everything in Growth AI System, plus:",
-        features: [],
-        highlight: true,
-      },
-      {
-        title: "Custom AI Development & Integration System:",
-        features: [
-          "Custom AI model development tailored to your industry",
-          "Bespoke API integrations with your existing systems",
-          "Custom AI applications built specifically for your needs",
-          "White-label AI solutions for your clients",
-        ],
-      },
-      {
-        title: "Enterprise AI Operations & Support System:",
-        features: [
-          "Advanced workflow automation across all business processes",
-          "Enterprise-grade security and compliance features",
-          "24/7 priority technical support with dedicated engineering team",
-          "Quarterly business strategy sessions with AI specialists",
-          "Custom reporting dashboards and analytics",
-          "Unlimited revisions and feature requests",
-        ],
-      },
+    benefits: [
+      "• Everything in Growth AI System, plus:",
+      "• Custom AI built specifically for your industry",
+      "• Connect to all your existing systems seamlessly",
+      "• White-label AI solutions to sell to your clients",
+      "• 24/7 priority support from our engineering team",
+      "• Quarterly strategy sessions with AI specialists",
+      "• Unlimited customizations and feature requests"
     ],
-    cta: "Contact Sales",
+    cta: "Get Started",
     color: "from-orange-500 to-orange-600",
   },
 ]
 
 const trustBadges = [
-  { icon: Shield, text: "90-Day ROI Guarantee" },
+  { icon: Shield, text: "90-Day Money-Back Guarantee" },
   { icon: CreditCard, text: "No Setup Fees" },
   { icon: Clock, text: "Cancel Anytime" },
-  { icon: Award, text: "SOC 2 Certified" },
+  { icon: Award, text: "SOC 2 Certified", tooltip: "SOC 2 is a security certification that ensures your data is protected with enterprise-grade security measures" },
 ]
 
 export default function PricingSection() {
@@ -175,10 +132,9 @@ export default function PricingSection() {
             <Zap className="w-4 h-4 mr-2" />
             Pricing Plans
           </div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Choose Your Growth Plan</h2>
+          <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Choose Your Revenue Growth Plan</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            Transparent pricing with no hidden fees. All plans include our 90-day ROI guarantee and can be canceled
-            anytime.
+            Pick the plan that matches your growth goals. All plans include our 90-day money-back guarantee if you don't see results.
           </p>
 
           {/* Billing Toggle */}
@@ -247,62 +203,18 @@ export default function PricingSection() {
                   </CardHeader>
 
                   <CardContent className="px-6 pb-8 flex-1 flex flex-col">
-                    {/* Features List */}
+                    {/* Benefits List */}
                     <div className="mb-8 flex-1">
-                      {tier.featureGroups ? (
-                        // Render grouped features
-                        <div className="space-y-6">
-                          {tier.featureGroups.map((group, groupIndex) => (
-                            <div key={groupIndex}>
-                              <h4
-                                className={`font-bold mb-3 text-sm ${
-                                  group.highlight ? "text-purple-700" : "text-gray-900"
-                                }`}
-                              >
-                                {group.title}
-                              </h4>
-                              {group.features.length > 0 && (
-                                <ul className="space-y-3">
-                                  {group.features.map((feature, featureIndex) => (
-                                    <li key={featureIndex} className="flex items-start text-gray-700">
-                                      <div className="w-5 h-5 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 bg-green-100">
-                                        <Check className="w-3 h-3 text-green-600" />
-                                      </div>
-                                      <span className="leading-relaxed text-sm">{feature}</span>
-                                    </li>
-                                  ))}
-                                </ul>
-                              )}
+                      <ul className="space-y-3">
+                        {tier.benefits.map((benefit, benefitIndex) => (
+                          <li key={benefitIndex} className="flex items-start text-gray-700">
+                            <div className="w-5 h-5 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 bg-green-100">
+                              <Check className="w-3 h-3 text-green-600" />
                             </div>
-                          ))}
-                        </div>
-                      ) : (
-                        // Render regular features for other tiers (fallback)
-                        <ul className="space-y-4">
-                          {tier.features?.map((feature, featureIndex) => {
-                            const FeatureIcon = feature.icon
-                            return (
-                              <li
-                                key={featureIndex}
-                                className={`flex items-start ${
-                                  feature.highlight ? "text-purple-700 font-semibold" : "text-gray-700"
-                                }`}
-                              >
-                                <div
-                                  className={`w-5 h-5 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 ${
-                                    feature.highlight ? "bg-purple-100" : "bg-green-100"
-                                  }`}
-                                >
-                                  <FeatureIcon
-                                    className={`w-3 h-3 ${feature.highlight ? "text-purple-600" : "text-green-600"}`}
-                                  />
-                                </div>
-                                <span className="leading-relaxed text-sm md:text-base">{feature.text}</span>
-                              </li>
-                            )
-                          })}
-                        </ul>
-                      )}
+                            <span className="leading-relaxed text-sm">{benefit}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
 
                     {/* CTA Button */}
@@ -343,7 +255,13 @@ export default function PricingSection() {
                   <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-3">
                     <BadgeIcon className="w-6 h-6 text-blue-600" />
                   </div>
-                  <span className="font-semibold text-gray-900">{badge.text}</span>
+                  {badge.tooltip ? (
+                    <Tooltip content={badge.tooltip}>
+                      <span className="font-semibold text-gray-900">{badge.text}</span>
+                    </Tooltip>
+                  ) : (
+                    <span className="font-semibold text-gray-900">{badge.text}</span>
+                  )}
                 </div>
               )
             })}

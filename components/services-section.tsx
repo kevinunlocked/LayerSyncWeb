@@ -9,14 +9,14 @@ const services = [
   {
     id: 1,
     icon: Database,
-    headline: "Unlock Hidden Revenue in Your Existing Data",
+    headline: "Turn Your Existing Data Into Revenue",
     description:
-      "Transform dormant customer databases into active revenue streams through AI-powered re-engagement campaigns and personalized outreach strategies.",
-    details: [
-      "AI-powered customer segmentation",
-      "Automated re-engagement campaigns",
-      "Personalized outreach sequences",
-      "Revenue recovery optimization",
+      "Transform dormant customer databases into active revenue streams that generate 3x more sales from your current customer base.",
+    benefits: [
+      "• Recover 40% more revenue from existing customers",
+      "• Automatically identify high-value prospects in your database", 
+      "• Send personalized messages that convert 5x better",
+      "• Track every interaction to optimize your approach"
     ],
     color: "from-blue-500 to-cyan-500",
     delay: 0,
@@ -24,14 +24,14 @@ const services = [
   {
     id: 2,
     icon: Users,
-    headline: "AI-Powered Lead Generation That Never Sleeps",
+    headline: "Generate Qualified Leads 24/7",
     description:
-      "Intelligent lead identification, qualification, and nurturing across LinkedIn, email, and social platforms with 24/7 automated follow-up sequences.",
-    details: [
-      "Multi-platform lead identification",
-      "Automated qualification scoring",
-      "24/7 follow-up sequences",
-      "Cross-channel nurturing",
+      "Never miss another opportunity with AI that finds, qualifies, and nurtures leads while you sleep - delivering ready-to-buy prospects.",
+    benefits: [
+      "• Find 10x more qualified leads automatically",
+      "• Qualify prospects with 95% accuracy",
+      "• Follow up instantly - even at 2 AM",
+      "• Convert 3x more leads into paying customers"
     ],
     color: "from-purple-500 to-pink-500",
     delay: 200,
@@ -39,14 +39,14 @@ const services = [
   {
     id: 3,
     icon: PenTool,
-    headline: "Scale Your Content Without Scaling Your Team",
+    headline: "Create Content That Sells",
     description:
-      "AI-generated blogs, social media posts, email sequences, and marketing materials that maintain your brand voice while driving engagement.",
-    details: [
-      "Brand voice consistency",
-      "Multi-format content creation",
-      "SEO-optimized blog posts",
-      "Social media automation",
+      "Generate high-converting content that sounds like you wrote it - blogs, social posts, emails, and ads that drive real business results.",
+    benefits: [
+      "• Write 50+ pieces of content per week automatically",
+      "• Maintain your unique brand voice in every piece",
+      "• Create SEO-optimized content that ranks higher",
+      "• Save 20+ hours per week on content creation"
     ],
     color: "from-emerald-500 to-green-500",
     delay: 400,
@@ -54,14 +54,14 @@ const services = [
   {
     id: 4,
     icon: MessageCircle,
-    headline: "Never Miss Another Lead with AI Agents",
+    headline: "Never Miss a Customer Again",
     description:
-      "Intelligent AI agents handle customer inquiries, qualify leads, and schedule appointments across your website, social media, and WhatsApp.",
-    details: [
-      "24/7 customer support",
-      "Intelligent lead qualification",
-      "Automated appointment scheduling",
-      "Multi-platform integration",
+      "AI agents that work around the clock to answer questions, qualify leads, and book appointments - so you never lose a potential sale.",
+    benefits: [
+      "• Answer customer questions instantly, 24/7",
+      "• Qualify leads and book appointments automatically",
+      "• Handle 10x more inquiries without hiring staff",
+      "• Convert 40% more website visitors into customers"
     ],
     color: "from-orange-500 to-red-500",
     delay: 600,
@@ -123,12 +123,11 @@ export default function ServicesSection() {
             <Sparkles className="w-3 sm:w-4 h-3 sm:h-4 mr-1.5 sm:mr-2" />
             Our Services
           </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold bg-gradient-to-r from-slate-900 via-blue-900 to-purple-900 bg-clip-text text-transparent mb-4 sm:mb-6 leading-tight">
-            Complete AI Automation Solutions
-          </h2>
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold bg-gradient-to-r from-slate-900 via-blue-900 to-purple-900 bg-clip-text text-transparent mb-4 sm:mb-6 leading-tight">
+            How We Help You Double Your Revenue
+          </h1>
           <p className="text-base sm:text-lg lg:text-xl text-slate-600 max-w-4xl mx-auto mb-6 sm:mb-8 leading-relaxed font-light">
-            We're currently automating growth for a select group of businesses ready to scale with AI. You could be
-            next.
+            Our AI systems work 24/7 to find more customers, close more deals, and grow your business while you focus on what matters most.
           </p>
 
           {/* CRM Integration Message - Mobile responsive */}
@@ -142,8 +141,7 @@ export default function ServicesSection() {
               </span>
             </div>
             <p className="text-xs sm:text-sm lg:text-lg text-slate-700 leading-relaxed text-center">
-              All services integrate seamlessly with our Client Management/CRM system for complete visibility and
-              control
+              Everything connects to your existing systems - no technical headaches, just results
             </p>
 
             {/* Connection Lines Visual - Mobile responsive */}
@@ -198,26 +196,19 @@ export default function ServicesSection() {
                     {service.description}
                   </CardDescription>
 
-                  {/* Expandable Details - Mobile optimized */}
-                  <div
-                    className={`transition-all duration-500 overflow-hidden ${
-                      isHovered ? "max-h-64 opacity-100 mb-4 sm:mb-6" : "max-h-0 opacity-0"
-                    }`}
-                  >
-                    <div className="border-t border-slate-200 pt-3 sm:pt-4">
-                      <h4 className="font-bold text-slate-900 mb-3 sm:mb-4 flex items-center text-xs sm:text-sm">
-                        <TrendingUp className="w-3 sm:w-4 h-3 sm:h-4 mr-2 text-blue-600" />
-                        Key Features:
-                      </h4>
-                      <ul className="space-y-2 sm:space-y-3">
-                        {service.details.map((detail, index) => (
-                          <li key={index} className="flex items-center text-xs sm:text-sm text-slate-600">
-                            <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mr-2 sm:mr-3 flex-shrink-0"></div>
-                            {detail}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                  {/* Benefits List - Always visible */}
+                  <div className="mb-4 sm:mb-6">
+                    <h4 className="font-bold text-slate-900 mb-3 sm:mb-4 flex items-center text-xs sm:text-sm">
+                      <TrendingUp className="w-3 sm:w-4 h-3 sm:h-4 mr-2 text-blue-600" />
+                      What You Get:
+                    </h4>
+                    <ul className="space-y-2 sm:space-y-3">
+                      {service.benefits.map((benefit, index) => (
+                        <li key={index} className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                          {benefit}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
 
                   <Button
@@ -252,7 +243,7 @@ export default function ServicesSection() {
                 </span>
               </div>
               <p className="text-blue-100 mb-6 sm:mb-8 max-w-3xl mx-auto text-sm sm:text-base lg:text-lg leading-relaxed">
-                See how our AI automation solutions can increase your conversions by 300% and boost customer retention.
+                Join businesses that are already seeing 3x more leads, 40% higher conversion rates, and 20+ hours saved per week.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 lg:gap-6 justify-center">
                 <Button
