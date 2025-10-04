@@ -101,14 +101,19 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 sm:h-18 lg:h-20">
           {/* Logo - Enhanced for mobile */}
           <div className="flex items-center space-x-2 sm:space-x-3">
-            <div className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl shadow-lg">
-              <span className="text-white font-bold text-sm sm:text-lg">LS</span>
+            <div className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10">
+              <img 
+                src="/LayerSyncAI_icon.svg" 
+                alt="LayerSync AI" 
+                className="w-full h-full object-contain"
+              />
             </div>
-            <div className="flex flex-col">
-              <span className="text-lg sm:text-xl font-bold bg-gradient-to-r from-slate-900 to-blue-900 bg-clip-text text-transparent leading-tight">
-                LayerSync
-              </span>
-              <span className="text-xs sm:text-sm font-semibold text-blue-600 leading-tight">AI</span>
+            <div className="flex items-center">
+              <img 
+                src="/LayerSyncAI_full.svg" 
+                alt="LayerSync AI" 
+                className="h-6 sm:h-8 object-contain"
+              />
             </div>
           </div>
 
