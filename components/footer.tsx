@@ -26,18 +26,18 @@ export default function Footer() {
                 <span className="text-sm font-medium text-blue-400 leading-tight">AI</span>
               </div>
             </div>
-            <p className="text-gray-100 mb-6 max-w-md leading-relaxed">
+            <p className="text-white mb-6 max-w-md leading-relaxed">
               We're currently automating growth for a select group of businesses ready to scale with AI. Transform your
               operations with intelligent automation that delivers measurable results.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-200 hover:text-blue-400 transition-colors duration-200">
+              <a href="#" className="text-white hover:text-blue-400 transition-colors duration-200">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-200 hover:text-blue-400 transition-colors duration-200">
+              <a href="#" className="text-white hover:text-blue-400 transition-colors duration-200">
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-200 hover:text-blue-400 transition-colors duration-200">
+              <a href="#" className="text-white hover:text-blue-400 transition-colors duration-200">
                 <Facebook className="w-5 h-5" />
               </a>
             </div>
@@ -50,7 +50,7 @@ export default function Footer() {
               <li>
                 <button
                   onClick={() => scrollToSection("#home")}
-                  className="text-gray-100 hover:text-blue-400 transition-colors duration-200 text-left"
+                  className="text-white hover:text-blue-400 transition-colors duration-200 text-left"
                 >
                   Home
                 </button>
@@ -58,7 +58,7 @@ export default function Footer() {
               <li>
                 <button
                   onClick={() => scrollToSection("#services")}
-                  className="text-gray-100 hover:text-blue-400 transition-colors duration-200 text-left"
+                  className="text-white hover:text-blue-400 transition-colors duration-200 text-left"
                 >
                   Services
                 </button>
@@ -66,7 +66,7 @@ export default function Footer() {
               <li>
                 <button
                   onClick={() => scrollToSection("#about")}
-                  className="text-gray-100 hover:text-blue-400 transition-colors duration-200 text-left"
+                  className="text-white hover:text-blue-400 transition-colors duration-200 text-left"
                 >
                   About
                 </button>
@@ -74,7 +74,7 @@ export default function Footer() {
               <li>
                 <button
                   onClick={() => scrollToSection("#pricing")}
-                  className="text-gray-100 hover:text-blue-400 transition-colors duration-200 text-left"
+                  className="text-white hover:text-blue-400 transition-colors duration-200 text-left"
                 >
                   Pricing
                 </button>
@@ -82,7 +82,7 @@ export default function Footer() {
               <li>
                 <button
                   onClick={() => scrollToSection("#contact")}
-                  className="text-gray-100 hover:text-blue-400 transition-colors duration-200 text-left"
+                  className="text-white hover:text-blue-400 transition-colors duration-200 text-left"
                 >
                   Contact
                 </button>
@@ -99,7 +99,7 @@ export default function Footer() {
                 <div>
                   <a
                     href="tel:+263783771054"
-                    className="text-gray-300 hover:text-blue-400 transition-colors duration-200"
+                    className="text-white hover:text-blue-400 transition-colors duration-200"
                   >
                     +263 78 377 1054
                   </a>
@@ -110,7 +110,7 @@ export default function Footer() {
                 <div>
                   <a
                     href="mailto:hello@layersyncai.com"
-                    className="text-gray-300 hover:text-blue-400 transition-colors duration-200"
+                    className="text-white hover:text-blue-400 transition-colors duration-200"
                   >
                     hello@layersyncai.com
                   </a>
@@ -119,7 +119,7 @@ export default function Footer() {
               <li className="flex items-start">
                 <MapPin className="w-5 h-5 text-blue-400 mr-3 mt-0.5 flex-shrink-0" />
                 <div>
-                  <span className="text-gray-300">Global Remote Team</span>
+                  <span className="text-white">Global Remote Team</span>
                 </div>
               </li>
             </ul>

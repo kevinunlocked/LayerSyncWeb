@@ -129,7 +129,7 @@ export default function HeroSection() {
                 isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              <p className="text-lg sm:text-xl lg:text-2xl text-blue-100/90 mb-8 sm:mb-12 leading-relaxed font-light">
+              <p className="text-lg sm:text-xl lg:text-2xl text-white mb-8 sm:mb-12 leading-relaxed font-light">
                 We help law firms, solar companies, and financial professionals automate operations, close more deals, and scale efficiently with custom AI solutions.
               </p>
             </div>
@@ -140,12 +140,12 @@ export default function HeroSection() {
                 isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              <p className="text-sm text-blue-200/70 mb-4 font-medium">Trusted by industry leaders</p>
+              <p className="text-sm text-white mb-4 font-medium">Trusted by industry leaders</p>
               <div className="flex flex-wrap justify-center lg:justify-start items-center gap-6 sm:gap-8">
                 {["Client A", "Client B", "Client C"].map((client, index) => (
                   <div
                     key={index}
-                    className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg px-4 py-2 text-white/80 text-sm font-medium hover:bg-white/10 transition-all duration-300 hover:scale-105"
+                    className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg px-4 py-2 text-white text-sm font-medium hover:bg-white/10 transition-all duration-300 hover:scale-105"
                   >
                     {client}
                   </div>
@@ -193,7 +193,7 @@ export default function HeroSection() {
                   <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
                   <div className="w-3 h-3 bg-green-400 rounded-full"></div>
                 </div>
-                <div className="text-white/60 text-sm font-medium">AI Dashboard</div>
+                <div className="text-white text-sm font-medium">AI Dashboard</div>
               </div>
 
               {/* Mockup Content */}
@@ -203,7 +203,7 @@ export default function HeroSection() {
                   <div className="bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-xl p-4 border border-white/10">
                     <div className="flex items-center gap-2 mb-2">
                       <Users className="w-4 h-4 text-blue-300" />
-                      <span className="text-xs text-white/70">Leads</span>
+                      <span className="text-xs text-white">Leads</span>
                     </div>
                     <div className="text-2xl font-bold text-white">2,847</div>
                     <div className="text-xs text-green-300">+127%</div>
@@ -211,7 +211,7 @@ export default function HeroSection() {
                   <div className="bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-xl p-4 border border-white/10">
                     <div className="flex items-center gap-2 mb-2">
                       <DollarSign className="w-4 h-4 text-green-300" />
-                      <span className="text-xs text-white/70">Revenue</span>
+                      <span className="text-xs text-white">Revenue</span>
                     </div>
                     <div className="text-2xl font-bold text-white">$184K</div>
                     <div className="text-xs text-green-300">+89%</div>
@@ -219,7 +219,7 @@ export default function HeroSection() {
                   <div className="bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-xl p-4 border border-white/10">
                     <div className="flex items-center gap-2 mb-2">
                       <TrendingUp className="w-4 h-4 text-purple-300" />
-                      <span className="text-xs text-white/70">Growth</span>
+                      <span className="text-xs text-white">Growth</span>
                     </div>
                     <div className="text-2xl font-bold text-white">312%</div>
                     <div className="text-xs text-green-300">+45%</div>
@@ -229,7 +229,7 @@ export default function HeroSection() {
                 {/* Chart Area */}
                 <div className="bg-gradient-to-r from-slate-800/50 to-slate-700/50 rounded-xl p-4 border border-white/10">
                   <div className="flex items-center justify-between mb-3">
-                    <span className="text-sm text-white/70">AI Performance</span>
+                    <span className="text-sm text-white">AI Performance</span>
                     <div className="flex gap-1">
                       <div className="w-2 h-2 bg-green-400 rounded-full"></div>
                       <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
