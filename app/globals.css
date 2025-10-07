@@ -38,35 +38,37 @@ img {
 
 @layer base {
   :root {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 6%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 6%;
+    /* New High-Contrast Color Palette */
+    --background: 222 47% 5%;        /* #0B0F1A - rich deep navy-black */
+    --foreground: 210 40% 98%;       /* #F8FAFC - off-white */
+    --card: 220 26% 11%;             /* #121826 - slightly lighter blue-gray */
+    --card-foreground: 210 40% 98%;  /* #F8FAFC - off-white */
+    --popover: 220 26% 11%;
     --popover-foreground: 210 40% 98%;
-    --primary: 142 76% 36%;
+    --primary: 221 83% 53%;          /* #3B82F6 - cool blue */
     --primary-foreground: 210 40% 98%;
-    --secondary: 217.2 32.6% 17.5%;
+    --secondary: 216 28% 17%;        /* #1E293B - dark blue-gray */
     --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
+    --muted: 216 28% 17%;
+    --muted-foreground: 227 67% 80%; /* #A5B4FC - soft lavender-blue */
+    --accent: 221 83% 53%;
     --accent-foreground: 210 40% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 142 76% 36%;
+    --border: 216 28% 17%;           /* #1E293B */
+    --input: 220 26% 11%;
+    --ring: 221 83% 53%;
     --radius: 0.75rem;
     
-    /* Custom color palette */
+    /* Custom color palette - AI/Automation theme */
     --neon-green: 142 76% 36%;
-    --neon-blue: 199 89% 48%;
-    --neon-purple: 262 83% 58%;
+    --neon-blue: 221 83% 53%;        /* #3B82F6 */
+    --neon-purple: 258 90% 66%;      /* #8B5CF6 */
     --neon-cyan: 188 100% 50%;
-    --dark-bg: 222.2 84% 4.9%;
-    --dark-card: 222.2 84% 6%;
-    --dark-border: 217.2 32.6% 17.5%;
+    --dark-bg: 222 47% 5%;           /* #0B0F1A */
+    --dark-card: 220 26% 11%;        /* #121826 */
+    --dark-border: 216 28% 17%;      /* #1E293B */
+    --highlight: 217 91% 60%;        /* #2563EB - highlight/hover */
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
@@ -75,25 +77,26 @@ img {
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
+    /* Dark mode uses same high-contrast palette */
+    --background: 222 47% 5%;
     --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
+    --card: 220 26% 11%;
     --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
+    --popover: 220 26% 11%;
     --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
+    --primary: 221 83% 53%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 216 28% 17%;
     --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
+    --muted: 216 28% 17%;
+    --muted-foreground: 227 67% 80%;
+    --accent: 221 83% 53%;
     --accent-foreground: 210 40% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 216 28% 17%;
+    --input: 220 26% 11%;
+    --ring: 221 83% 53%;
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
@@ -423,7 +426,11 @@ img {
 }
 
 .card-dark {
-  @apply bg-slate-900/90 backdrop-blur-xl border border-slate-700/50 rounded-3xl shadow-2xl;
+  background: #121826;
+  backdrop-filter: blur(24px);
+  border: 1px solid #1E293B;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 0 40px rgba(59, 130, 246, 0.05);
   position: relative;
 }
 
@@ -434,7 +441,7 @@ img {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.03), rgba(139, 92, 246, 0.03));
   border-radius: inherit;
   pointer-events: none;
   z-index: 1;
@@ -740,7 +747,9 @@ img {
   }
 
   .card-dark {
-    @apply bg-gray-900/50 border border-gray-700/50 backdrop-blur-sm;
+    background: #121826;
+    border: 1px solid #1E293B;
+    backdrop-filter: blur(16px);
   }
 
   .text-neon-green {
@@ -748,15 +757,32 @@ img {
   }
 
   .text-neon-blue {
-    @apply text-cyan-400;
+    color: #3B82F6;
   }
 
   .text-neon-purple {
-    @apply text-purple-400;
+    color: #8B5CF6;
   }
 
   .bg-dark-gradient {
-    @apply bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900;
+    background: linear-gradient(135deg, #0B0F1A 0%, #121826 50%, #0B0F1A 100%);
+  }
+
+  /* Gradient text utility */
+  .gradient-text {
+    background: linear-gradient(90deg, #3B82F6, #8B5CF6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-text-animated {
+    background: linear-gradient(90deg, #3B82F6, #8B5CF6, #3B82F6);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-shift 6s ease infinite;
   }
 
   .section-spacing {
