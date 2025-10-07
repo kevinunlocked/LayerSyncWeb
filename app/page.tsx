@@ -8,6 +8,7 @@ import SuccessStoriesSection from "@/components/success-stories-section"
 import AboutSection from "@/components/about-section"
 import ContactSection from "@/components/contact-section"
 import LeadMagnetSection from "@/components/lead-magnet-section"
+import ConsultationBanner from "@/components/consultation-banner"
 import ChatWidget from "@/components/chat-widget"
 import Footer from "@/components/footer"
 
@@ -32,6 +33,9 @@ export default function Home() {
 
       {/* Lead Magnet Section - Above Footer */}
       <LeadMagnetSection />
+
+      {/* Consultation Banner - Bottom of page */}
+      <ConsultationBanner />
 
       <Footer />
 
