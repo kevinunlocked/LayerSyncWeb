@@ -4,24 +4,27 @@ import { GeistMono } from 'geist/font/mono'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'LayerSync AI - AI-Powered Growth Systems for Business',
-  description: 'Transform your business with AI-powered growth systems. We help law firms, solar companies, and financial professionals automate operations, close more deals, and scale efficiently with custom AI solutions.',
-  keywords: 'AI automation, business growth, lead generation, law firms, solar companies, financial services, AI systems, business scaling',
+  title: 'LayerSync AI | Scalable AI Systems for Business Growth',
+  description: 'We design and deploy high-impact AI systems — from sales automation to data analytics — that help businesses scale efficiently and profitably.',
+  keywords: 'AI systems, sales automation, content creation AI, operational workflow automation, data analytics, business intelligence, AI-driven sales, predictive modeling, process automation, business growth AI',
   authors: [{ name: 'LayerSync AI' }],
   creator: 'LayerSync AI',
   publisher: 'LayerSync AI',
   robots: 'index, follow',
   openGraph: {
-    title: 'LayerSync AI - AI-Powered Growth Systems',
-    description: 'Transform your business with AI-powered growth systems. Automate operations, close more deals, and scale efficiently.',
+    title: 'LayerSync AI | Scalable AI Systems for Business Growth',
+    description: 'We design and deploy high-impact AI systems — from sales automation to data analytics — that help businesses scale efficiently and profitably.',
     type: 'website',
     locale: 'en_US',
     siteName: 'LayerSync AI',
+    url: 'https://layersyncai.com',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'LayerSync AI - AI-Powered Growth Systems',
-    description: 'Transform your business with AI-powered growth systems. Automate operations, close more deals, and scale efficiently.',
+    title: 'LayerSync AI | Scalable AI Systems for Business Growth',
+    description: 'We design and deploy high-impact AI systems — from sales automation to data analytics — that help businesses scale efficiently and profitably.',
+    site: '@LayerSyncAI',
+    creator: '@LayerSyncAI',
   },
   icons: {
     icon: '/favicon.svg',
