@@ -1,10 +1,7 @@
 import Header from "@/components/header"
 import HeroSection from "@/components/hero-section"
 import ServicesSection from "@/components/services-section"
-import ProcessSection from "@/components/process-section"
-import ResultsSection from "@/components/results-section"
 import PricingSection from "@/components/pricing-section"
-import SuccessStoriesSection from "@/components/success-stories-section"
 import AboutSection from "@/components/about-section"
 import ContactSection from "@/components/contact-section"
 import LeadMagnetSection from "@/components/lead-magnet-section"
@@ -20,13 +17,10 @@ export default function Home() {
       {/* Hero Section */}
       <HeroSection />
 
-      {/* Demo sections for testing scroll behavior */}
+      {/* Main sections */}
       <main>
         <ServicesSection />
-        <ProcessSection />
-        <ResultsSection />
         <PricingSection />
-        <SuccessStoriesSection />
         <AboutSection />
         <ContactSection />
       </main>

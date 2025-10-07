@@ -7,10 +7,9 @@ import React from "react"
 
 const navigation = [
   { name: "Home", href: "#home" },
-  { name: "How It Works", href: "#how-it-works" },
+  { name: "Services", href: "#services" },
   { name: "Pricing", href: "#pricing" },
-  { name: "Success Stories", href: "#success-stories" },
-  { name: "FAQ", href: "#faq" },
+  { name: "About", href: "#about" },
   { name: "Contact", href: "#contact" },
 ]
 
